@@ -1,0 +1,8 @@
+Notes: 
+
+Resistor codes graphic from:
+
+https://www.utmel.com/tools/band-resistor-color-code-calculator?id=20
+
+6 band image link:
+https://res.utmel.com/Images/UEditor/95f63af3-b8c7-4727-a355-ec724ecaf3b8.png
