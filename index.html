@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Drill Quiz for Test 1 - Midlands Technical College | ECE-101</title>
+<style>
+:root{--bg:#09101d;--surface:#111c2d;--raised:#162438;--line:#29384c;--muted:#a2b2c7;--text:#f0f5ff;--cyan:#55e2d4;--blue:#8aabff;--yellow:#f5c96c;--good:#65e1a8;--bad:#ff8992;--radius:18px;--shadow:0 16px 48px #0307104d}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 10% -10%,#16355266,transparent 45%),radial-gradient(ellipse at 95% 0%,#24385844,transparent 42%),var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button,select{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}h1,h2,h3,p{margin-top:0}.shell{width:min(1220px,calc(100% - 36px));margin:0 auto;padding:24px 0 48px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:24px}.identity{display:flex;align-items:center;gap:16px}.logo{width:54px;height:54px;border:1px solid #4de6d563;border-radius:16px;background:#12374b;display:grid;place-items:center;color:var(--cyan);font-size:28px;font-weight:900;box-shadow:inset 0 0 22px #00edff14}.eyebrow,.micro{font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:var(--cyan)}h1{font-size:clamp(25px,3.2vw,39px);line-height:1.08;letter-spacing:-.035em;margin:5px 0 7px}h1 span{color:var(--cyan)}.subtle{color:var(--muted);font-size:13px}.topNote{color:var(--muted);text-align:right;font-size:13px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 0 22px}.stat{background:linear-gradient(150deg,#1b2c43,#101c2c);border:1px solid var(--line);border-radius:15px;padding:15px 18px;box-shadow:var(--shadow)}.statLabel{font-size:12px;color:var(--muted);font-weight:650}.statValue{font-size:31px;letter-spacing:-.03em;font-weight:800;line-height:1.3;font-variant-numeric:tabular-nums}.stat:nth-child(1) .statValue{color:var(--good)}.stat:nth-child(2) .statValue{color:var(--bad)}.stat:nth-child(3) .statValue{color:var(--yellow)}.stat:nth-child(4) .statValue{color:var(--cyan)}.progress{height:4px;border-radius:10px;background:#2a3549;margin:8px 0 0;overflow:hidden}.progress>div{height:100%;width:0%;background:linear-gradient(90deg,#64dfab,#4bdade);transition:width .3s}.layout{display:grid;grid-template-columns:minmax(0,1fr) 305px;gap:19px;align-items:start}.panel{background:linear-gradient(145deg,#132034,#101b2a);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.questionPanel{padding:25px;min-height:700px}.tools{display:flex;flex-wrap:wrap;align-items:flex-end;gap:13px;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:23px;margin-bottom:21px}.fieldSelect{display:flex;flex-direction:column;gap:7px;min-width:180px;flex:1}.fieldSelect label{font-size:12px;color:var(--muted);font-weight:700}.fieldSelect select,.bandPicker{min-height:43px;padding:9px 12px;border-radius:10px;background:#0b1727;border:1px solid #39506a;color:var(--text);max-width:100%;width:100%}.quizmeta{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:13px}.tag{font-size:11px;padding:5px 10px;color:var(--cyan);background:#12383e;border:1px solid #357477;border-radius:30px;font-weight:800;letter-spacing:.045em;text-transform:uppercase}.questionIndex{color:var(--muted);font-size:12px}.titleRow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 10px}.questionTitle{font-size:clamp(20px,2.2vw,26px);letter-spacing:-.025em;line-height:1.25;margin:0}.questionAuxBtn{white-space:nowrap}.prompt{font-size:15px;color:#dbe5f3;line-height:1.7;margin:0 0 18px}.visual{background-color:#0a1624;background-image:linear-gradient(#39546d18 1px,transparent 1px),linear-gradient(90deg,#39546d18 1px,transparent 1px);background-size:22px 22px;border:1px solid #29435a;border-radius:14px;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;margin-bottom:23px;overflow:hidden}.visual svg{display:block;width:100%;height:auto;max-height:340px}.visual:empty{display:none}.bandLegend{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:4px}.bandLegend span{border:1px solid #425a70;background:#1a2b3e;padding:3px 8px;border-radius:6px;color:#dce8f7;font-size:12px;font-weight:650}.answerHead{font-size:13px;font-weight:800;margin-bottom:11px}.answerForm{display:flex;flex-direction:column;gap:12px}.inputrow{display:flex;gap:9px;align-items:stretch;flex-wrap:wrap}.answerField{min-width:0;flex:1;background:#091523;border:1px solid #40607a;color:var(--text);padding:13px 15px;font-size:20px;border-radius:11px;letter-spacing:.015em}.answerField::placeholder{color:#7890a9}.unit{border:1px solid var(--line);background:#1d2d40;border-radius:11px;padding:13px 16px;font-size:20px;font-weight:700;min-width:60px;text-align:center}.hint{color:var(--muted);font-size:12px;line-height:1.6}.twofields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.inputLabel{display:block;font-size:12px;color:#c2d3e7;margin-bottom:7px;font-weight:750}.inputGroup{min-width:0}.inputGroup .answerField{width:100%}.bandgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}.bandgrid label{font-size:12px;color:#c4d7e9;display:block;margin-bottom:7px}.bandPicker{font-size:13px;padding:8px 7px}.choiceGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.choiceBtn{padding:14px 16px;background:#0b1828;color:var(--text);border:1px solid #3a5169;border-radius:10px;text-align:left;min-height:62px;white-space:normal;transition:.16s}.choiceBtn:hover:not(:disabled){border-color:var(--cyan);background:#193045}.choiceBtn.selected{border-color:var(--cyan);background:#153d48;box-shadow:inset 0 0 0 1px #44d8ca55}.choiceBtn:disabled{opacity:.78;cursor:default}.choiceBtn.correct{border-color:var(--good);background:#153a33}.choiceBtn.incorrect{border-color:var(--bad);background:#41252e}.actions{display:flex;gap:11px;flex-wrap:wrap;align-items:center;margin-top:22px}.btn{border:1px solid #4a6177;border-radius:11px;padding:12px 19px;color:var(--text);background:#1a2a40;font-weight:800;transition:.16s}.btn:hover{filter:brightness(1.15)}.primary{border-color:#6eefe4;background:linear-gradient(135deg,#6ff4d6,#56bdec);color:#071a25}.smallBtn{font-size:12px;padding:10px 13px}.mutedBtn{color:var(--muted);background:transparent;border-color:#35465a}.rightAction{margin-left:auto}.feedback{margin-top:20px;border-radius:13px;padding:16px 18px;border:1px solid #395771;background:#162738;display:none}.feedback.show{display:block}.feedback.success{border-color:#3b906d;background:#12372e}.feedback.error{border-color:#ab5c65;background:#36242d}.feedbackTitle{font-weight:850;font-size:17px;margin-bottom:6px}.feedbackTitle strong{color:var(--good)}.feedback.error .feedbackTitle strong{color:var(--bad)}.feedbackBody{color:#dce9f4;line-height:1.7;font-size:14px}.feedbackBody code,.chipcode{padding:1px 5px;color:#e3fff7;background:#244458;border-radius:4px;font-size:.93em}.sidebar{display:flex;flex-direction:column;gap:16px}.sideCard{padding:20px}.sideCard h2{font-size:16px;margin:0 0 11px;letter-spacing:-.01em}.sideCard p,.sideCard li{font-size:13px;color:#b7c7da;line-height:1.7}.sideCard p:last-child{margin-bottom:0}.sideCard ul{padding-left:19px;margin-bottom:0}.legend{display:grid;grid-template-columns:1fr 1fr;gap:7px 16px;font-size:13px;color:#d2e1eb}.legend div{display:flex;justify-content:space-between;border-bottom:1px solid #293d53;padding-bottom:4px}.legend b{color:var(--cyan)}.sideRule{border:0;border-top:1px solid var(--line);margin:18px 0}details summary{cursor:pointer;color:#dfedfb;font-size:13px;font-weight:800;padding:4px 0}details p{margin-top:9px}.foot{margin-top:21px;text-align:center;color:#7e93ac;font-size:12px}.foot a{color:var(--cyan)}.meter{font-size:12px;color:var(--muted);margin-top:10px}.key{border:1px solid #526276;padding:2px 6px;border-radius:5px;background:#101c2b;color:#dfe8f8;white-space:nowrap}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1d3c43;color:#eafffb;border:1px solid #5bdbc4;padding:10px 18px;border-radius:12px;box-shadow:0 8px 24px #0008;display:none;z-index:10}.toast.show{display:block}.modalBackdrop{position:fixed;inset:0;background:#000a;display:grid;place-items:center;padding:18px;z-index:60}.modalBackdrop[hidden]{display:none}.modalCard{width:min(980px,96vw);max-height:92vh;overflow:auto}.modalHead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px 10px}.modalHead h3{margin:0;font-size:20px}.modalImageWrap{padding:0 18px 8px}.modalImageWrap img{display:block;max-width:100%;max-height:62vh;margin:0 auto;border:1px solid #29435a;border-radius:12px;background:#fff}.modalTabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:6px 18px 10px}.modalTabs .btn.active{border-color:#6eefe4;background:#153d48;color:#eafffb}.modalLinks{padding:0 18px 18px;text-align:center;color:#a9bfd6;font-size:12px}.modalLinks a{color:var(--cyan)}@media(max-width:950px){.layout{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.questionPanel{min-height:0}}@media(max-width:580px){.shell{width:calc(100% - 20px);padding:13px 0 32px}.topbar{align-items:start}.topNote{display:none}.stats{gap:7px}.stat{padding:10px}.statValue{font-size:23px}.statLabel{font-size:10px}.questionPanel{padding:15px}.twofields{grid-template-columns:1fr}.bandgrid{grid-template-columns:repeat(3,minmax(0,1fr))}.choiceGrid{grid-template-columns:1fr}.sidebar{grid-template-columns:1fr}.logo{width:42px;height:42px;font-size:22px}.topbar{gap:8px}h1{font-size:25px}.visual{padding:5px}.btn{padding:11px 13px}.titleRow{align-items:flex-start}.questionAuxBtn{width:100%}}
+.unitsModeControl{display:flex;align-items:center;gap:12px;padding:13px;margin:14px 0 7px;border:1px solid #396376;border-radius:12px;background:#0e2634;color:var(--text);cursor:pointer}.unitsModeControl input{width:21px;height:21px;min-width:21px;accent-color:var(--cyan);cursor:pointer}.unitsModeControl span{display:flex;flex-direction:column;gap:2px}.unitsModeControl strong{font-size:14px}.unitsModeControl small{font-size:12px;color:#b7c7da}.unitsModeStatus{font-weight:750;color:var(--cyan)!important;margin:0 0 13px!important}
+
+/* v11: denser layout without reducing answer/selection readability. */
+.unit.answerUnit[hidden]{display:none!important}
+.shell{padding-top:20px;padding-bottom:32px}
+.topbar{margin-bottom:18px}
+.stats{gap:10px;margin-bottom:18px}
+.stat{padding:11px 15px;border-radius:13px}
+.statValue{font-size:27px;line-height:1.18}
+.progress{margin-top:5px}
+.layout{gap:16px}
+.questionPanel{padding:22px;min-height:600px}
+.tools{padding-bottom:16px;margin-bottom:16px;gap:11px}
+.fieldSelect select{min-height:40px;padding:7px 11px}
+.quizmeta{margin-bottom:10px}
+.questionTitle{margin-bottom:9px}
+.prompt{margin-bottom:13px;line-height:1.55}
+.visual{padding:9px;margin-bottom:15px;min-height:165px}
+.visual svg{max-height:315px}
+.answerHead{margin-bottom:8px}
+.answerField{padding:11px 13px}
+.unit{padding:11px 14px}
+.actions{margin-top:17px}
+.btn{padding:10px 16px}
+.feedback{margin-top:15px;padding:13px 16px}
+.sideCard{padding:17px}
+.sidebar{gap:14px}
+.sideCard p,.sideCard li{line-height:1.58}
+.sideCard h2{margin-bottom:9px}
+.unitsModeControl{margin-top:11px;padding:11px}
+.foot{margin-top:17px}
+@media(max-width:950px){.questionPanel{min-height:0}}
+@media(max-width:580px){.shell{padding-top:11px}.stat{padding:9px}.statValue{font-size:22px}.questionPanel{padding:14px}.visual{padding:5px}.sideCard{padding:15px}}
+
+/* Resistor reference sheet: compact but readable in the sidebar. */
+.bandRefWrap{width:100%;max-width:100%;overflow-x:auto;margin-top:10px;border:1px solid #39506a;border-radius:8px}
+.bandRefTable{width:100%;border-collapse:collapse;font-size:10.5px;line-height:1.35;font-variant-numeric:tabular-nums;color:#e3edf8}
+.bandRefTable th,.bandRefTable td{padding:5px 3px;border-bottom:1px solid #32455b;white-space:nowrap;text-align:center}
+.bandRefTable thead th{background:#1b3044;color:#dff8f4;font-size:10px;font-weight:750}
+.bandRefTable tbody th{text-align:left;font-weight:650}
+.bandRefTable tbody tr:nth-child(even){background:#1b2a3c65}
+.bandRefTable tbody tr:last-child>*{border-bottom:0}
+.bandSwatch{display:inline-block;width:11px;height:11px;border:1px solid #9caabb;border-radius:2px;vertical-align:-1px;margin-right:4px}
+.bandRefDetails .bandRefNote{font-size:11px;line-height:1.45;margin-top:8px;color:#b7c7da}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="topbar"><div class="identity"><div class="logo" aria-hidden="true">Ω</div><div><div class="eyebrow">Electrical Engineering · ECE-101</div><h1>Drill Quiz for Test 1 <span>- Midlands Technical College</span></h1><div class="subtle">Practice circuits, symbols, resistor codes, and unit conversions.</div></div></div><div class="topNote">Single-page · Randomized problems<br>Results saved on this device</div></header>
+<div class="stats" aria-label="Cumulative quiz score"><div class="stat"><div class="statLabel">Correct</div><div class="statValue" id="right">0</div></div><div class="stat"><div class="statLabel">Incorrect</div><div class="statValue" id="wrong">0</div></div><div class="stat"><div class="statLabel">Current streak</div><div class="statValue" id="streak">0</div></div><div class="stat"><div class="statLabel">Accuracy</div><div class="statValue" id="percent">—</div><div class="progress"><div id="accuracyBar"></div></div></div></div>
+<div class="layout"><main class="panel questionPanel" aria-label="Quiz questions"><div class="tools"><div class="fieldSelect"><label for="topicSelect">PRACTICE TOPIC</label><select id="topicSelect"><option value="all">All topics · mixed practice</option><option value="bands">Resistor color bands</option><option value="resistance">Series & parallel resistance</option><option value="kirchhoff">KCL & KVL</option><option value="ohm">Ohm's law</option><option value="metric">Metric prefixes</option><option value="concepts">Meters & circuit concepts</option><option value="symbols">Schematic symbols & polarity</option><option value="formula">Parallel resistance formulas</option><option value="batteries">Batteries: aiding & opposing</option><option value="power">Power & dividers (bonus)</option></select></div><button class="btn smallBtn mutedBtn" type="button" id="resetBtn" title="Clear cumulative correct, incorrect, and streak totals">↺ Reset score</button></div>
+<div class="quizmeta"><span class="tag" id="topicTag">PRACTICE</span><span class="questionIndex" id="questionNum">Question 1</span></div><div class="titleRow"><h2 class="questionTitle" id="questionTitle">Loading question…</h2><button class="btn smallBtn mutedBtn questionAuxBtn" id="questionAuxBtn" type="button" hidden>Show resistor chart</button></div><p class="prompt" id="prompt"></p><div class="visual" id="visual" aria-label="Question diagram"></div>
+<div class="answerHead" id="answerTitle">Your answer</div><form class="answerForm" id="answerForm" autocomplete="off"></form><div class="hint" id="inputHint"></div>
+<div class="actions"><button class="btn primary" id="checkBtn" type="button">Check answer ↵</button><button class="btn mutedBtn" id="skipBtn" type="button">Skip · counts wrong</button><button class="btn primary" id="nextBtn" type="button" hidden>Next question →</button><span class="subtle rightAction" id="phaseLabel">One score per question</span></div>
+<div class="feedback" id="feedback" role="status" aria-live="polite"><div class="feedbackTitle" id="feedbackTitle"></div><div class="feedbackBody" id="feedbackBody"></div></div></main>
+<aside class="sidebar"><section class="panel sideCard"><h2>Engineering entry rules</h2><p>Enter answers using an <strong>engineering prefix</strong> when appropriate. Type <span class="chipcode">10 k</span> or <span class="chipcode">10k</span>, not <span class="chipcode">10000</span>; type <span class="chipcode">100 m</span> or <span class="chipcode">100m</span>, not <span class="chipcode">0.1</span>.</p><label class="unitsModeControl" for="unitsMode"><input id="unitsMode" type="checkbox"><span><strong>Units Mode</strong><small>Require correct units in numerical answers</small></span></label><p id="unitsModeStatus" class="unitsModeStatus" aria-live="polite">Units optional.</p><p>When Units Mode is enabled, include the correct unit, e.g.: <span class="chipcode">12mA</span>, <span class="chipcode">12 mA</span>, <span class="chipcode">12 mV</span>, <span class="chipcode">12 kΩ</span>, <span class="chipcode">12kΩ</span>, or <span class="chipcode">12mW</span>. For resistance, <span class="chipcode">O</span>, <span class="chipcode">Ohm</span>, <span class="chipcode">Ohms</span>, and <span class="chipcode">Ω</span> are accepted. <strong>Spaces are ignored.</strong></p><p><span class="chipcode">u</span> and <span class="chipcode">µ</span> both mean micro. Capitalization matters for both prefixes and units: <span class="chipcode">M</span> = mega, <span class="chipcode">m</span> = milli; <span class="chipcode">mA</span> is valid but <span class="chipcode">ma</span> is not when in Units Mode.</p><p>Calculated numerical results allow <strong>±0.5%</strong> rounding error. Prefix and answer-format rules still apply.</p></section>
+<section class="panel sideCard"><h2>Practice controls</h2><p>Use the topic menu to focus on one subject. The score stays cumulative when you change topics or reload the page.</p><p>For multiple-choice questions, press <span class="key">A</span>–<span class="key">D</span> to select one answer. Press <span class="key">Enter</span> to check it, then press Enter again for the next question. A skipped question counts as incorrect.</p><details class="bandRefDetails"><summary>Color-band reference</summary><div class="bandRefWrap"><table class="bandRefTable"><thead><tr><th scope="col">Color</th><th scope="col">Digit</th><th scope="col">Multiplier</th><th scope="col">Tolerance</th></tr></thead><tbody><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#171a20"></span>Black</th><td>0</td><td>×1</td><td>—</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#89522e"></span>Brown</th><td>1</td><td>×10</td><td>±1%</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#ed4447"></span>Red</th><td>2</td><td>×100</td><td>±2%</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#ec9038"></span>Orange</th><td>3</td><td>×1K</td><td>±0.05%</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#f4d452"></span>Yellow</th><td>4</td><td>×10K</td><td>±0.02%</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#329d74"></span>Green</th><td>5</td><td>×100K</td><td>±0.5%</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#3889dc"></span>Blue</th><td>6</td><td>×1M</td><td>±0.25%</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#9357bf"></span>Violet</th><td>7</td><td>×10M</td><td>±0.1%</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#89949f"></span>Grey</th><td>8</td><td>×100M</td><td>±0.01%</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#f6f8f9"></span>White</th><td>9</td><td>×1G</td><td>—</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#d5b158"></span>Gold</th><td>—</td><td>×0.1</td><td>±5%</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#bac5ce"></span>Silver</th><td>—</td><td>×0.01</td><td>±10%</td></tr></tbody></table></div><p class="bandRefNote">No tolerance band: ±20%. For 3-band resistors, the third band is the multiplier.</p></details></section></aside></div>
+<div class="foot">©2026 Chris Athanas. Link to source on <a href="https://github.com/realityexpander/ECE-101-Electronics-Quiz-App-for-Test-1-Resistors-Ohms-Law-KCL-KVL-" target="_blank" rel="noopener noreferrer">GitHub</a> · ECE-101 Drill Quiz v19</div></div><div class="toast" id="toast" role="alert"></div>
+<div class="modalBackdrop" id="chartModal" hidden aria-hidden="true"><div class="panel modalCard" role="dialog" aria-modal="true" aria-labelledby="chartModalTitle"><div class="modalHead"><h3 id="chartModalTitle">Resistor color-band charts</h3><button class="btn smallBtn mutedBtn" type="button" id="chartCloseBtn">Close ×</button></div><div class="modalImageWrap"><img id="chartImage" alt="Resistor color-band reference chart"></div><div class="modalTabs"><button class="btn smallBtn mutedBtn" id="chartBtn3" type="button">3 band</button><button class="btn smallBtn mutedBtn" id="chartBtn4" type="button">4 band</button><button class="btn smallBtn mutedBtn" id="chartBtn5" type="button">5 band</button></div><div class="modalLinks">Reference images: <a href="resistor_chart_3_band.png" target="_blank" rel="noopener">3 band</a> · <a href="resistor_chart_4_band.png" target="_blank" rel="noopener">4 band</a> · <a href="resistor_chart_5_band.png" target="_blank" rel="noopener">5 band</a></div></div></div>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const COLORS=['Black','Brown','Red','Orange','Yellow','Green','Blue','Violet','Grey','White','Gold','Silver'];
+const COLHEX={Black:'#171a20',Brown:'#89522e',Red:'#ed4447',Orange:'#ec9038',Yellow:'#f4d452',Green:'#329d74',Blue:'#3889dc',Violet:'#9357bf',Grey:'#89949f',White:'#f6f8f9',Gold:'#d5b158',Silver:'#bac5ce'};
+const DIGITS=COLORS.slice(0,10), MULTS={Black:0,Brown:1,Red:2,Orange:3,Yellow:4,Green:5,Blue:6,Violet:7,Grey:8,White:9,Gold:-1,Silver:-2};
+const TOL={Brown:1,Red:2,Gold:5,Silver:10};
+const PREFIX=[{p:'p',e:-12,n:'pico'},{p:'n',e:-9,n:'nano'},{p:'µ',e:-6,n:'micro'},{p:'m',e:-3,n:'milli'},{p:'',e:0,n:'base'},{p:'k',e:3,n:'kilo'},{p:'M',e:6,n:'mega'},{p:'G',e:9,n:'giga'},{p:'T',e:12,n:'tera'}];
+const topics={bands:'Resistor bands',resistance:'Equivalent resistance',kirchhoff:"Kirchhoff's laws",ohm:"Ohm's law",metric:'Metric prefixes',concepts:'Meters & behavior',symbols:'Symbols & polarity',formula:'Parallel formulas',batteries:'Battery networks',power:'Power & dividers'};
+const RESISTOR_CHARTS={3:'resistor_chart_3_band.png',4:'resistor_chart_4_band.png',5:'resistor_chart_5_band.png'};
+const rand=(a,b)=>Math.floor(Math.random()*(b-a+1))+a, pick=a=>a[rand(0,a.length-1)], shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){let j=rand(0,i);[a[i],a[j]]=[a[j],a[i]];}return a;};
+const resistors=[10,22,33,47,68,100,150,220,330,470,680,1000,1500,2200,3300,4700,6800,10000,15000,22000];
+const unitEsc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmtNumber=x=>Number(x.toPrecision(4)).toString();
+function eng(val,unit=''){if(val===0)return '0'+unit;const a=Math.abs(val);let e=Math.floor((Math.log10(a)+1e-10)/3)*3;e=Math.max(-12,Math.min(12,e));const pr=PREFIX.find(x=>x.e===e);return fmtNumber(val/10**e)+(pr?pr.p:'')+unit;}
+const colorDigit=d=>DIGITS[+d];
+const colorMul=e=>Object.keys(MULTS).find(k=>MULTS[k]===e);
+// Read the engineering prefix and the physical unit separately; never silently discard a wrong unit.
+function normalizeNumericInput(s){return String(s).trim().replace(/[\u00a0\u202f\s]/g,'').replace(/\u2212/g,'-').replace(/[μ]/g,'µ');}
+function canonicalUnit(unit){
+ if(!unit)return '';
+ // Unit symbols are case-sensitive in Units Mode. Preserve invalid casing
+ // rather than silently uppercasing it (e.g. 12ma must not equal 12mA).
+ if(/^(?:Ω|Ω|O|Ohm|Ohms)$/.test(unit))return 'Ω';
+ if(/^(?:A|Amp|Amps|Ampere|Amperes)$/.test(unit))return 'A';
+ if(/^(?:V|Volt|Volts)$/.test(unit))return 'V';
+ if(/^(?:W|Watt|Watts)$/.test(unit))return 'W';
+ return unit;
+}
+function splitUnit(raw){
+ const s=normalizeNumericInput(raw);
+ const match=s.match(/(Ω|Ω|Ohms?|O|Amperes?|Amps?|A|Volts?|V|Watts?|W)$/i);
+ return match?{numeric:s.slice(0,-match[0].length),unit:canonicalUnit(match[0])}:{numeric:s,unit:''};
+}
+const PREFIXVALUE={T:1e12,G:1e9,M:1e6,k:1e3,m:1e-3,u:1e-6,'µ':1e-6,n:1e-9,p:1e-12,'':1};
+function parseEngineering(s){
+ const {numeric,unit}=splitUnit(s);
+ const m=numeric.match(/^([+-]?(?:\d+(?:\.\d*)?|\.\d+))(T|G|M|k|K|m|u|µ|n|p)?$/);
+ if(!m)return null;
+ const num=+m[1],sym=m[2]==='K'?'k':(m[2]||'');
+ if(!Number.isFinite(num))return null;
+ const normalized=num===0||(Math.abs(num)>=1-1e-12&&Math.abs(num)<1000-1e-9);
+ return {value:num*PREFIXVALUE[sym],normalized,sym,num,unit};
+}
+function parseScientific(s){
+ let {numeric,unit}=splitUnit(s);
+ numeric=numeric.replace(/[×·*]/g,'x').replace(/\u207B/g,'-').replace(/\u00b2/g,'2').replace(/\u00b3/g,'3');
+ let m=numeric.match(/^([+-]?(?:\d+(?:\.\d*)?|\.\d+))[eE]([+-]?\d+)$/);
+ if(!m)m=numeric.match(/^([+-]?(?:\d+(?:\.\d*)?|\.\d+))x10\^?([+-]?\d+)$/i);
+ return m?{value:+m[1]*10**(+m[2]),unit}:null;
+}
+function unitError(actual,expected){
+ if(!unitsMode||!expected||actual===expected)return null;
+ if(!actual)return `Units Mode is ON. Add the correct unit (${expected}) to your answer.`;
+ return `Units Mode is ON. Expected ${expected}, but your answer uses ${actual}.`;
+}
+function near(a,b){return Number.isFinite(a)&&Math.abs(a-b)<=Math.max(1e-15,Math.abs(b)*0.005);}
+function exactNominal(a,b){return Number.isFinite(a)&&Math.abs(a-b)<=Math.max(1e-16,Math.abs(b)*1e-10);}
+function svg(content,view='0 0 700 300',description='Electrical diagram'){return `<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${unitEsc(description)}" viewBox="${view}" preserveAspectRatio="xMidYMid meet"><g stroke="#b2cee7" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">${content}</g></svg>`;}
+const txt=(x,y,s,extra='')=>`<text x="${x}" y="${y}" fill="#e0f0ff" stroke="none" font-size="19" font-weight="600" text-anchor="middle" ${extra}>${unitEsc(s)}</text>`;
+const line=(x,y,x2,y2,extra='')=>`<line x1="${x}" y1="${y}" x2="${x2}" y2="${y2}" ${extra}/>`;
+function resistorBandSvg(bands,selected=false){
+ let cnt=bands.length;
+ let xs=cnt===3?[236,338,440]:cnt===4?[206,292,378,518]:[184,264,344,424,536];
+ let out=`${line(28,95,84,95)}${line(616,95,672,95)}<path d="M124 54 H 566 C 594 54 612 72 618 95 C 612 118 594 136 566 136 H 124 C 96 136 78 118 72 95 C 78 72 96 54 124 54 Z" fill="#d5b998" stroke="#9a866e" stroke-width="3"/>`;
+ bands.forEach((c,i)=>{let x=xs[i];if(c)out+=`<rect x="${x-15}" y="56" width="30" height="78" rx="4" fill="${COLHEX[c]}" stroke="#4e4134" stroke-width="1.5"/>`;out+=`<line x1="${x}" y1="138" x2="${x}" y2="160" stroke="#8cb2ce" stroke-width="1.5"/>${txt(x,183,c||'Unused','font-size="16"')}`;});
+ return svg(out,'0 0 700 205',selected?'Selected resistor band colors':'Resistor color bands labeled by name')+`<div class="bandLegend" aria-label="Color names in order">${bands.map((c,i)=>`<span>${i+1}: ${c||'Unused'}</span>`).join('')}</div>`;
+}
+
+function segmentedWire(y,left,right,centers){
+ let from=left,out='';
+ for(const x of [...centers].sort((a,b)=>a-b)){
+  const to=x-RESISTOR_HALF;
+  if(to>from)out+=line(from,y,to,y);
+  from=x+RESISTOR_HALF;
+ }
+ if(right>from)out+=line(from,y,right,y);
+ return out;
+}
+function seriesSvg(values,source='Vₛ'){
+ const N=values.length;
+ const centers=Array.from({length:N},(_,i)=>80+(i+1)*540/(N+1));
+ let out=`${segmentedWire(80,80,620,centers)}${line(80,80,80,132)}${line(80,208,80,254)}${line(620,80,620,254)}${line(80,254,620,254)}<circle cx="80" cy="170" r="38" fill="#10263b"/>${txt(80,177,source,'font-size="18"')}${txt(53,124,'+','font-size="20"')}${txt(53,218,'−','font-size="20"')}`;
+ values.forEach((v,i)=>{out+=resistorBox(centers[i],80,`R${i+1} = ${eng(v,'Ω')}`);});
+ return svg(out,'0 0 700 300','Series resistor circuit with wires ending at resistor terminals');
+}
+function parallelSvg(values,opt={}){
+ const N=values.length;
+ const xs=Array.from({length:N},(_,i)=>160+i*(390/(N-1)));
+ // The horizontal rails start at the voltage source and STOP at the
+ // outermost resistor branch. No unconnected wire stubs beyond the branches.
+ const railEnd=xs[N-1];
+ let out=`${line(75,63,railEnd,63)}${line(75,266,railEnd,266)}${line(75,63,75,126)}${line(75,204,75,266)}<circle cx="75" cy="165" r="39" fill="#10263b"/>${txt(75,172,opt.source||'Vₛ','font-size="18"')}`;
+ values.forEach((v,i)=>{
+  const x=xs[i];
+  out+=`${line(x,63,x,166-RESISTOR_HALF)}${resistorBox(x,166,'',true)}${line(x,166+RESISTOR_HALF,x,266)}`;
+  // Keep the component's identity and value next to its zigzag, not below
+  // the bottom rail. Use compact two-line labels for closely spaced branches.
+  const labelX=x+(N<=3?72:45);
+  const mainLabel=opt.currentLabels?.[i];
+  out+=txt(labelX,156,`R${i+1}`,`font-size="${N>=4?14:17}"`);
+  out+=txt(labelX,178,mainLabel||eng(v,'Ω'),`font-size="${N>=4?12:15}"`);
+ });
+ return svg(out,'0 0 700 300','Parallel resistor branches: rails terminate at the final branch; resistor values appear beside symbols');
+}
+function kclSvg(ins,outs,unknownSide,unknownIndex){let l1=unknownSide==='in'&&unknownIndex===0?'?':eng(ins[0],'A'),l2=unknownSide==='in'&&unknownIndex===1?'?':eng(ins[1],'A'),r1=unknownSide==='out'&&unknownIndex===0?'?':eng(outs[0],'A'),r2=unknownSide==='out'&&unknownIndex===1?'?':eng(outs[1],'A');let content=`<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#5be5d0" stroke="none"/></marker></defs><circle cx="350" cy="150" r="9" fill="#63e5d2" stroke="none"/>${line(110,150,335,150,'stroke="#61e5d4" marker-end="url(#arrow)"')}${line(350,20,350,134,'stroke="#61e5d4" marker-end="url(#arrow)"')}${line(363,150,589,150,'stroke="#61e5d4" marker-end="url(#arrow)"')}${line(350,162,350,282,'stroke="#61e5d4" marker-end="url(#arrow)"')}${txt(190,125,`I₁ = ${l1}`)}${txt(418,55,`I₂ = ${l2}`)}${txt(510,125,`I₃ = ${r1}`)}${txt(445,253,`I₄ = ${r2}`)}${txt(350,187,'NODE','font-size="13"')}`;
+ return svg(content,'0 0 700 315','Kirchhoff current law: two arrows entering and two leaving node');}
+function kvlSvg(voltage,drops,unknown){
+ const centers=drops.map((_,i)=>195+i*163);
+ let out=`${segmentedWire(90,78,622,centers)}${line(78,90,78,132)}${line(78,208,78,255)}${line(622,90,622,255)}${line(78,255,622,255)}<circle cx="78" cy="170" r="38" fill="#10263b"/>${txt(78,174,eng(voltage,'V'),'font-size="16"')}${txt(47,124,'+')}${txt(47,226,'−')}`;
+ drops.forEach((v,i)=>{out+=resistorBox(centers[i],90,`V${i+1} = ${i===unknown?'?':eng(v,'V')}`);});
+ return svg(out,'0 0 700 310','KVL source and three series resistor drops; wire stops at each resistor');
+}
+function ohmSvg(R,I,V){
+ let out=`${segmentedWire(84,100,600,[375])}${line(100,84,100,133)}${line(100,207,100,252)}${line(600,84,600,252)}${line(100,252,600,252)}<circle cx="100" cy="170" r="37" fill="#10263b"/>${txt(100,176,'Vₛ')}${resistorBox(375,84,`R = ${R===null?'?':eng(R,'Ω')}`)}${txt(360,218,`I = ${I===null?'?':eng(I,'A')}`)}${txt(480,30,`Vₛ = ${V===null?'?':eng(V,'V')}`)}`;
+ return svg(out,'0 0 700 300',"Ohm's law: wires connect only to resistor terminals");
+}
+function cellSvg(cells){
+ let n=cells.length, step=510/n, y=155, out='',from=65;
+ cells.forEach((c,i)=>{
+  let x=80+(i+.5)*step,left=x-14,right=x+14;
+  // Leads connect to the cell plates, not through them.
+  out+=line(from,y,left,y);
+  out+=`<line x1="${left}" x2="${left}" y1="${c.dir===1?135:112}" y2="${c.dir===1?175:198}" stroke="#f6cd8f" stroke-width="5"/><line x1="${right}" x2="${right}" y1="${c.dir===1?112:135}" y2="${c.dir===1?198:175}" stroke="#f6cd8f" stroke-width="5"/>${txt(left,231,c.dir===1?'−':'+')}${txt(right,231,c.dir===1?'+':'−')}${txt(x,82,eng(c.v,'V'))}`;
+  from=right;
+ });
+ out+=line(from,y,635,y);
+ out+=`${txt(65,123,'L','font-size="16"')}${txt(635,123,'R','font-size="16"')}${txt(350,277,'Find V(R) − V(L)','font-size="18"')}`;
+ return svg(out,'0 0 700 300','Series aiding and opposing battery cells, wires stop at plates');
+}
+function dividerSvg(R1,R2,V){
+ let out=`${line(110,40,550,40)}${line(110,40,110,125)}${line(110,205,110,290)}${line(110,290,550,290)}${line(550,40,550,103-RESISTOR_HALF)}${line(550,103+RESISTOR_HALF,550,163)}${line(550,163,550,224-RESISTOR_HALF)}${line(550,224+RESISTOR_HALF,550,290)}<circle cx="110" cy="165" r="40" fill="#102638"/>${txt(110,170,eng(V,'V'),'font-size="16"')}${resistorBox(550,103,`R₁ = ${eng(R1,'Ω')}`,true)}${resistorBox(550,224,`R₂ = ${eng(R2,'Ω')}`,true)}<circle cx="550" cy="163" r="5" fill="#60dfd1" stroke="none"/>${line(435,163,550,163,'stroke="#60dfd1"')}${txt(464,146,'Vout','font-size="17"')}`;
+ return svg(out,'0 0 700 310','Voltage divider with terminal-to-terminal connections');
+}
+const SYMBOLS={ground:'Ground (earth)',resistor:'Fixed resistor',potentiometer:'Potentiometer',rheostat:'Rheostat',voltmeter:'Voltmeter',ohmmeter:'Ohmmeter',battery:'Battery (multiple cells)',dcvoltage:'Independent DC voltage source (Vₛ)',ammeter:'Ammeter',cell:'Single battery cell',acvoltage:'AC voltage source',dccurrent:'DC current source',accurrent:'AC current source',led:'Light-emitting diode (LED)',diode:'Diode'};
+// ANSI three-terminal potentiometer: two end terminals and one wiper arrow.
+// Rotate the complete symbol so students recognize all four orientations.
+function potentiometerSvg(degrees=0){
+ const winding=`${line(75,165,106,165)}<path d="M106 165 L121 187 L150 138 L180 187 L210 138 L240 187 L270 138 L285 165" fill="none" stroke="#b2cee7" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>${line(285,165,345,165)}`;
+ const wiper=`${line(210,52,210,116,'stroke="#5ee7ce" stroke-width="5"')}<path d="M198 116 L222 116 L210 138 Z" fill="#5ee7ce" stroke="none"/>`;
+ return svg(`<g transform="rotate(${degrees} 210 165)">${winding}${wiper}</g>`,'0 0 420 330',`Three-terminal ANSI potentiometer, ${degrees} degree orientation`);
+}
+function symbolSvg(type,reverse=false,rotation=null){
+ if(type==='potentiometer')return potentiometerSvg(rotation===null?pick([0,90,180,270]):rotation);
+ let c='',mid='';const wire=`${line(50,105,162,105)}${line(258,105,370,105)}`;const circle=`<circle cx="210" cy="105" r="48" fill="#15283d" stroke="#b2cee7"/>`;
+ switch(type){
+ case 'ground':c=`${line(210,20,210,97)}${line(165,97,255,97)}${line(181,110,239,110)}${line(196,123,224,123)}`;break;
+ case 'resistor':case 'rheostat':
+ c=`${line(50,105,145,105)}<path d="M145 105 l14 -18 l18 36 l18 -36 l18 36 l18 -36 l18 36 l14 -18" fill="none" stroke="#b2cee7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>${line(263,105,370,105)}`;
+ if(type==='rheostat')c+=`<defs><marker id="sArrow" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 Z" fill="#5ee7ce" stroke="none"/></marker></defs>${line(165,152,253,44,'stroke="#5ee7ce" marker-end="url(#sArrow)"')}`;
+ break;
+ case 'voltmeter':case 'ohmmeter':case 'ammeter':c=wire+circle+txt(210,115,{voltmeter:'V',ohmmeter:'Ω',ammeter:'A'}[type],'font-size="47" font-weight="700"');break;
+ case 'cell':case 'battery':{const xs=type==='cell'?[190]:[145,207,268];c=line(45,105,xs[0],105)+line(xs[xs.length-1]+17,105,375,105);xs.forEach(x=>{c+=`${line(x,64,x,146,'stroke-width="5"')}${line(x+17,82,x+17,128,'stroke-width="5"')}`;if(x!==xs[xs.length-1])c+=line(x+17,105,x+61,105)});if(type==='battery')c+=txt(133,57,'+','font-size="27"')+txt(302,57,'−','font-size="27"');if(type==='battery')c+=txt(210,178,'Vₛ','font-size="22"');if(type==='cell')c+=txt(177,57,'+','font-size="27"')+txt(227,57,'−','font-size="27"');break;}
+ case 'dcvoltage':c=wire+circle+`${txt(210,91,'+','font-size="27"')}${txt(210,133,'−','font-size="29"')}${txt(210,188,'Vₛ','font-size="18"')}`;break;
+ case 'acvoltage':c=wire+circle+`<path d="M172 107 C184 55 200 55 210 105 C220 155 237 155 248 103" stroke="#65dfcd" stroke-width="5" fill="none"/>`;break;
+ case 'dccurrent':c=wire+circle+`<path d="M176 105 L244 105 M223 87 L247 105 L223 123" stroke="#65dfcd" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;break;
+ case 'accurrent':c=wire+circle+`<path d="M178 91 L242 91 M223 75 L245 91 L223 107" stroke="#65dfcd" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M179 124 C189 111 200 111 210 124 S231 137 241 124" stroke="#f1c76a" stroke-width="3.8" stroke-linecap="round" fill="none"/>`;break;
+ case 'diode':case 'led':{
+ c=`${line(50,105,165,105)}${line(247,105,370,105)}`+`<path d="M165 73 L165 137 L247 105 Z" fill="#183f52" stroke="#b2cee7"/><line x1="247" y1="70" x2="247" y2="141" stroke="#a8f1e4" stroke-width="6"/>`;
+ if(type==='led')c+=`<defs><marker id="lightArrow" markerWidth="7" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#f6d87d" stroke="none"/></marker></defs>${line(240,63,277,26,'stroke="#f6d87d" marker-end="url(#lightArrow)"')}${line(265,80,302,43,'stroke="#f6d87d" marker-end="url(#lightArrow)"')}`;
+ break;}
+ }
+ if(reverse&&['diode','led'].includes(type))c=`<g transform="translate(420 0) scale(-1 1)">${c}</g>`;
+ return svg(c,'0 0 420 200','Schematic symbol identification');}
+function ledPhysical(which,side){let leftCathode=side==='left',out='';if(which==='flat'){
+ let d=leftCathode?'M192 173 L192 75 C225 23 298 35 322 102 Q338 157 299 174 Q255 191 192 173 Z':'M308 173 L308 75 C275 23 202 35 178 102 Q162 157 201 174 Q245 191 308 173 Z';
+ out=`<path d="${d}" fill="#bf4949" fill-opacity=".33" stroke="#ff8d8d" stroke-width="4"/>`;
+ out+=leftCathode?`<path d="M192 98 L192 174" stroke="#f6cd91" stroke-width="7"/>`:`<path d="M308 98 L308 174" stroke="#f6cd91" stroke-width="7"/>`;
+ // The lead on the flat side is the cathode (negative) and is visibly shorter.
+ out+=`${line(225,172,225,leftCathode?232:282)}${line(277,172,277,leftCathode?282:232)}${txt(251,29,'LED housing','font-size="16"')}${txt(251,312,'Which lead is the NEGATIVE lead?','font-size="17"')}`;
+ }else{
+ out=`<path d="M190 172 L190 102 C190 17 311 17 311 102 L311 172 Z" fill="#bf4949" fill-opacity=".33" stroke="#ff8d8d" stroke-width="4"/>${line(222,172,222,leftCathode?230:283,'stroke="#f2d38f" stroke-width="6"')}${line(278,172,278,leftCathode?283:230,'stroke="#f2d38f" stroke-width="6"')}${txt(250,312,'Which lead is the NEGATIVE lead?','font-size="17"')}`;
+ }
+ out+=`${txt(175,185,'LEFT','font-size="14"')}${txt(336,185,'RIGHT','font-size="14"')}`;return svg(out,'0 0 500 335','LED with cathode indicated by flat side or shorter lead');}
+function diodeCathodeSvg(left){let c=symbolSvg('diode',left);return c;}
+function qBase(topic,title,statement,art,answer,explanation,extra={}){return {topic,title,statement,art,answer,explanation,...extra};}
+function numAns(expected,unit){return {type:'engineering',expected,unit};}
+function randomBands(){const n=pick([3,4,5]);const count=n===5?3:2;let digits=String(rand(1,9))+Array.from({length:count-1},()=>rand(0,9)).join('');let mult=rand(-2,n===5?3:4),col=digits.split('').map(colorDigit).concat(colorMul(mult));if(n!==3)col.push(pick(Object.keys(TOL)));return {bands:col,value:Number(digits)*10**mult,tol:n===3?20:TOL[col[col.length-1]]};}
+function decodeBands(colors){if(colors.length<3||colors.length>5||!colors.every(Boolean))return null;const n=colors.length,dn=n===5?3:2,digs=colors.slice(0,dn);if(!digs.every(c=>DIGITS.includes(c))||digs[0]==='Black')return null;const exponent=MULTS[colors[dn]];if(exponent===undefined)return null;const tolerance=n===3?20:TOL[colors[n-1]];if(tolerance===undefined)return null;return {value:+digs.map(x=>DIGITS.indexOf(x)).join('')*10**exponent,tol:tolerance};}
+function bandToValue(){const b=randomBands();return qBase('bands','Read the resistor color bands','Enter the nominal resistance in engineering notation and the tolerance percentage. Band names appear below each colored band.',resistorBandSvg(b.bands),{type:'resistorDecode',expected:b.value,tol:b.tol},`Bands: ${b.bands.join(' → ')}. The nominal resistance is <strong>${eng(b.value,'Ω')}</strong> with <strong>±${b.tol}%</strong> tolerance.${b.bands.length===3?' With three bands, the missing tolerance band means ±20%.':''}`,{chartButton:true,bandCount:b.bands.length});}
+function valueToBand(){let b=randomBands();return qBase('bands','Build the resistor color bands',`Select band colors, from left to right, for a resistor marked <strong>${eng(b.value,'Ω')} ±${b.tol}%</strong>. There are five color selectors, but you may leave trailing bands unused. More than one valid color-code length may represent the same specification.`,resistorBandSvg([null,null,null,null,null],true),{type:'colors',expected:b.value,tol:b.tol},`One valid arrangement is <strong>${b.bands.join(' → ')}</strong>. The checker accepts <em>any</em> valid 3-, 4-, or 5-band sequence that decodes to ${eng(b.value,'Ω')} ±${b.tol}%.`,{initialBands:[null,null,null,null,null],chartButton:true,bandCount:4});}
+function seriesResistance(){let N=rand(2,4),rs=Array.from({length:N},()=>pick(resistors));return qBase('resistance','Total resistance — series',`Find the equivalent resistance of these ${N} series resistors. Enter the answer in engineering notation.`,seriesSvg(rs),numAns(rs.reduce((a,b)=>a+b,0),'Ω'),`Series resistances add: ${rs.map(r=>eng(r,'Ω')).join(' + ')} = <strong>${eng(rs.reduce((a,b)=>a+b,0),'Ω')}</strong>.`);}
+function parallelResistance(kind){let N=kind==='same'?rand(2,5):kind==='two'?2:rand(3,4);let rs=kind==='same'?Array(N).fill(pick(resistors)):shuffle(resistors).slice(0,N);let val=1/rs.reduce((s,r)=>s+1/r,0);let rule=kind==='same'?`All ${N} values are identical, so Rₜ = R / N.`:kind==='two'?`For two branches, Rₜ = (R₁ × R₂) / (R₁ + R₂).`:`Use the reciprocal method: 1/Rₜ = ${rs.map((r,i)=>`1/R${i+1}`).join(' + ')}.`;
+ return qBase('resistance',`Total resistance — parallel (${kind==='same'?'identical':kind==='two'?'two branches':'mixed branches'})`,`Find the equivalent resistance of this parallel circuit. Do not use a formula sheet; round to approximately 3–4 significant figures.`,parallelSvg(rs),numAns(val,'Ω'),`${rule} The equivalent resistance is <strong>${eng(val,'Ω')}</strong>. It must be smaller than the smallest branch resistance.`);}
+function kclQuestion(){let a=rand(2,12)*.001,b=rand(3,14)*.001,c=rand(1,Math.round((a+b)*1000)-1)*.001,d=a+b-c;const ins=[a,b],outs=[c,d],side=pick(['in','out']);let idx=rand(0,1),unknown=side==='in'?ins[idx]:outs[idx];if(side==='in'&&idx===0){ // keep a nonnegative solution, already true
+ }
+ return qBase('kirchhoff','Kirchhoff current law (KCL)','At this node, the sum of incoming currents equals the sum of outgoing currents. What is the current marked <strong>?</strong>?',kclSvg(ins,outs,side,idx),numAns(unknown,'A'),`KCL: current entering = current leaving. ${eng(a,'A')} + ${eng(b,'A')} = ${eng(c,'A')} + ${eng(d,'A')}, so <strong>? = ${eng(unknown,'A')}</strong>.`);}
+function kvlQuestion(){const drops=Array.from({length:3},()=>rand(2,19)),V=drops.reduce((a,b)=>a+b,0),unknown=rand(0,2);return qBase('kirchhoff','Kirchhoff voltage law (KVL)','Find the missing resistor voltage drop.',kvlSvg(V,drops,unknown),numAns(drops[unknown],'V'),`<strong>KVL rule:</strong> For a single closed loop, the source voltage equals the sum of the voltage drops. KVL: +${eng(V,'V')} − ${drops.map(x=>eng(x,'V')).join(' − ')} = 0. Missing voltage = <strong>${eng(drops[unknown],'V')}</strong>.`);}
+function ohmQuestion(kind){let R=pick(resistors),I=pick([.0005,.001,.002,.003,.005,.01,.02,.025,.05,.1,.2]),V=R*I,ask=kind==='V'?'V':kind==='I'?'I':'R';return qBase('ohm',`Ohm's law — solve for ${ask}`,`Use Ohm's law to calculate ${ask==='V'?'the voltage across the resistor':ask==='I'?'the circuit current':'the resistor value'}.`,ohmSvg(ask==='R'?null:R,ask==='I'?null:I,ask==='V'?null:V),numAns(ask==='R'?R:ask==='I'?I:V,ask==='R'?'Ω':ask==='I'?'A':'V'),ask==='V'?`V = I × R = ${eng(I,'A')} × ${eng(R,'Ω')} = <strong>${eng(V,'V')}</strong>.`:ask==='I'?`I = V / R = ${eng(V,'V')} / ${eng(R,'Ω')} = <strong>${eng(I,'A')}</strong>.`:`R = V / I = ${eng(V,'V')} / ${eng(I,'A')} = <strong>${eng(R,'Ω')}</strong>.`);}
+function sciText(n){let e=Math.floor(Math.log10(Math.abs(n))),mant=n/10**e;return `${fmtNumber(mant)} × 10<sup>${e}</sup>`;}
+function metricQuestion(kind){const unit=pick(['Ω','A','V','W']);if(kind==='name'){const pre=pick(PREFIX.filter(x=>x.p));return qBase('metric','Name the metric prefix',`Which <strong>metric prefix name</strong> represents 10<sup>${pre.e}</sup>? Type the word, not the symbol.`,null,{type:'text',accepted:[pre.n]},`10<sup>${pre.e}</sup> is <strong>${pre.n}</strong> (${pre.p}).`);}
+ const pre=pick(PREFIX.filter(x=>x.p)),m=pick([1,2.2,3.3,4.7,5,6.8,8.2,9.1,12,47,68,100,220,470]);const number=m*10**pre.e;
+ if(kind==='sci')return qBase('metric','Engineering → scientific notation',`Convert <strong>${eng(number,unit)}</strong> to scientific notation. Enter an expression such as <strong>4.7x10^4</strong> or <strong>4.7e4</strong>.`,null,{type:'scientific',expected:number,unit},`${eng(number,unit)} = <strong>${sciText(number)} ${unit}</strong>.`);
+ return qBase('metric','Scientific → engineering notation',`Convert <strong>${sciText(number)} ${unit}</strong> to engineering notation with an SI prefix. Enter the numerical value and prefix; unit is optional.`,null,numAns(number,unit),`The engineering notation is <strong>${eng(number,unit)}</strong>.`);}
+const CONCEPT_QUESTIONS=[
+ ()=>qBase('concepts','Safely measuring resistance','Before using an ohmmeter to measure a resistor, what should you do with the circuit power?',null,{type:'choice',options:[{id:'off',label:'Turn off / remove power from the circuit'},{id:'leave',label:'Leave the power on so the reading is more accurate'},{id:'reverse',label:'Reverse the meter leads first'},{id:'parallel',label:'Place the ammeter in parallel with the source'}],correct:'off'},'An ohmmeter supplies its own test current, so the circuit must be unpowered before measuring resistance.'),
+ ()=>qBase('concepts','Measuring voltage','A voltmeter should be connected how with respect to the component being measured?',null,{type:'choice',options:[{id:'parallel',label:'Across the component (in parallel)'},{id:'series',label:'Through the component (in series)'},{id:'short',label:'Directly across the source regardless of the circuit'},{id:'open',label:'In an open circuit with one lead disconnected'}],correct:'parallel'},'A voltmeter measures potential difference between two points, so it is connected across the component.'),
+ ()=>qBase('concepts','Measuring current','To measure the current through a resistor, how should an ammeter be connected?',null,{type:'choice',options:[{id:'parallel',label:'In parallel with the resistor'},{id:'series',label:'In series with the resistor'},{id:'across',label:'Directly across the source terminals'},{id:'ground',label:'Only to the circuit ground'}],correct:'series'},'An ammeter must be placed in series so the branch current flows through the meter.'),
+ ()=>qBase('concepts','Ammeter safety','True or false: It is safe to connect an ammeter directly across a voltage source.',null,{type:'choice',options:[{id:'true',label:'True'},{id:'false',label:'False'}],correct:'false'},'False. An ammeter has very low internal resistance, so placing it directly across a source can create a short circuit.'),
+ ()=>qBase('concepts','What is a short circuit?','Which definition best describes a short circuit?',null,{type:'choice',options:[{id:'short',label:'An unintended low-resistance path for current'},{id:'open',label:'A broken connection that stops all current'},{id:'divider',label:'A circuit that splits voltage equally'},{id:'meter',label:'A measurement taken across a component'}],correct:'short'},'A short is an unintended, very low-resistance conducting path that can bypass a load and allow excessive current.'),
+ ()=>qBase('concepts','Series circuit — constant property','In a series circuit, which quantity is the same through every component?',null,{type:'choice',options:[{id:'current',label:'Current'},{id:'voltage',label:'Voltage'},{id:'power',label:'Power'},{id:'resistance',label:'Resistance'}],correct:'current'},'The same current flows through every series component; the individual voltage drops can differ.'),
+ ()=>qBase('concepts','Series circuit — varying property','In a series circuit containing different resistances, what happens to the voltage across each resistor?',null,{type:'choice',options:[{id:'divided',label:'It is divided / can be different across each resistor'},{id:'same',label:'It is always the same across every resistor'},{id:'zero',label:'It becomes zero across all but one resistor'},{id:'fixed',label:'It must equal the source voltage on every resistor'}],correct:'divided'},'The supply voltage divides into voltage drops: Vₛ = V₁ + V₂ + ⋯.'),
+ ()=>qBase('concepts','Parallel circuit — constant property','In a parallel circuit, which quantity is the same across each branch?',null,{type:'choice',options:[{id:'voltage',label:'Voltage'},{id:'current',label:'Current'},{id:'power',label:'Power'},{id:'resistance',label:'Resistance'}],correct:'voltage'},'Parallel branches share the same two nodes, so their voltages are equal.'),
+ ()=>qBase('concepts','Parallel circuit — varying property','In a parallel circuit with branches of different resistance, what happens to the current?',null,{type:'choice',options:[{id:'divides',label:'It divides and can be different in each branch'},{id:'same',label:'It is always the same in every branch'},{id:'zero',label:'It becomes zero in all branches'},{id:'source',label:'Each branch current equals the full source current'}],correct:'divides'},'Current divides between the branches. The source current is the sum of the branch currents.'),
+ ()=>qBase('concepts','Series — resistance increases','In a series circuit, suppose current is fixed. If resistance increases, what happens to the voltage across that resistor?',null,{type:'choice',options:[{id:'up',label:'It goes up'},{id:'down',label:'It goes down'}],correct:'up'},'At constant current, V = IR, so increasing R increases the voltage drop.'),
+ ()=>qBase('concepts','Series — resistance decreases','In a series circuit, suppose current is fixed. If resistance decreases, what happens to the voltage across that resistor?',null,{type:'choice',options:[{id:'up',label:'It goes up'},{id:'down',label:'It goes down'}],correct:'down'},'At constant current, V = IR, so decreasing R decreases the voltage drop.'),
+ ()=>qBase('concepts','Parallel — resistance increases','In a parallel branch with fixed voltage, the resistance increases. What happens to the branch current?',null,{type:'choice',options:[{id:'up',label:'It goes up'},{id:'down',label:'It goes down'}],correct:'down'},'I = V/R. At constant voltage, a larger resistance means less current.'),
+ ()=>qBase('concepts','Parallel — resistance decreases','In a parallel branch with fixed voltage, the resistance decreases. What happens to the branch current?',null,{type:'choice',options:[{id:'up',label:'It goes up'},{id:'down',label:'It goes down'}],correct:'up'},'I = V/R. At constant voltage, lower resistance means more current.')
+];
+function conceptQuestion(){return pick(CONCEPT_QUESTIONS)();}
+// Every symbol-identification question has exactly one best answer.
+// A cell (one long/short plate pair), a multi-cell battery and an independent
+// DC source (circle marked +/-) are drawn and labeled distinctly.
+function symbolQuestion(type=pick(Object.keys(SYMBOLS)),rotation=null){
+ // Rheostat and potentiometer must always be compared with one another.
+ const comparePair=type==='rheostat'||type==='potentiometer';
+ const paired=type==='rheostat'?'potentiometer':'rheostat';
+ const exclusions=comparePair?[type,paired]:[type];
+ const distractors=shuffle(Object.keys(SYMBOLS).filter(k=>!exclusions.includes(k)))
+  .slice(0,comparePair?2:3);
+ const options=shuffle(comparePair?[type,paired,...distractors]:[type,...distractors])
+  .map(id=>({id,label:SYMBOLS[id]}));
+ const explanation=type==='cell'
+  ?'The <strong>one pair</strong> of long and short plates is the standard symbol for a <strong>single battery cell</strong>. A battery uses multiple pairs, and the independent DC voltage source is drawn as a circle with + and −.'
+  :type==='battery'
+  ?'The <strong>multiple pairs</strong> of long and short plates indicate a <strong>battery of multiple cells</strong>, rather than a single cell.'
+  :type==='dcvoltage'
+  ?'The <strong>circle with + and −</strong> represents an <strong>independent DC voltage source</strong>. A battery or single cell has long and short plate symbols.'
+  :`The symbol is <strong>${SYMBOLS[type]}</strong>.`;
+ return qBase('symbols','Identify the schematic symbol',
+  'Choose the single best name for the electrical symbol shown in the diagram.',
+  symbolSvg(type,false,rotation),{type:'choice',options,correct:type},explanation);
+}
+function diodeQuestion(){let reversed=Math.random()<.5,side=reversed?'left':'right';return qBase('symbols','Identify the diode cathode (negative end)','The <strong>bar</strong> on the diode symbol marks its cathode. Which side of this diode is the cathode? Enter <strong>left</strong> or <strong>right</strong>.',symbolSvg('diode',reversed),{type:'text',accepted:[side]},`The <strong>${side}</strong> side has the bar, so it is the cathode (K), which is the negative lead for forward-bias identification.`);}
+function ledQuestion(kind){const cath=pick(['left','right']);return qBase('symbols',kind==='flat'?'LED polarity — flat edge':'LED polarity — leg length',kind==='flat'?'Which lead is the <strong>NEGATIVE</strong> lead? Enter <strong>left</strong> or <strong>right</strong>.':'Which lead is the <strong>NEGATIVE</strong> lead? Enter <strong>left</strong> or <strong>right</strong>.',ledPhysical(kind,cath),{type:'text',accepted:[cath]},`The <strong>${cath}</strong> lead is the cathode. On a typical through-hole LED, the <strong>flat side</strong> of the case and the <strong>shorter lead</strong> identify the cathode. Some specialty LEDs differ; use the datasheet when uncertain.`);}
+const FORMULAS={same:'Rₜ = R / N',two:'Rₜ = (R₁ × R₂) / (R₁ + R₂)',mixed:'Rₜ = 1 / (1/R₁ + 1/R₂ + ⋯ + 1/Rₙ)'};
+function formulaQuestion(kind){let desc={same:'All resistors have identical resistance R. Which formula calculates their equivalent resistance when N resistors are in parallel?',two:'Exactly two resistors, R₁ and R₂, are in parallel. Which formula gives their equivalent resistance?',mixed:'Any number of resistors, potentially all with different values, are in parallel. Which formula works in general?'}[kind];const choices=shuffle([{id:kind,label:FORMULAS[kind]},{id:'series',label:'Rₜ = R₁ + R₂ + ⋯ + Rₙ'},...Object.entries(FORMULAS).filter(([k])=>k!==kind).map(([id,label])=>({id,label}))]);return qBase('formula',`Parallel formula — ${kind==='same'?'equal values':kind==='two'?'two resistors':'general case'}`,desc,null,{type:'choice',correct:kind,options:choices},`Correct: <strong>${FORMULAS[kind]}</strong>. ${kind==='same'?'For N identical parallel resistors, divide the resistance of one by N.':kind==='two'?'For exactly two parallel resistors, use product over sum.':'The reciprocal formula works for all parallel combinations.'}`);}
+function batteryAidingQuestion(){let n=rand(2,4),cells=Array.from({length:n},()=>({v:pick([1.5,3,4.5,6,9,12]),dir:pick([-1,1])}));if(cells.every(c=>c.dir===1)||cells.every(c=>c.dir===-1))cells[rand(0,n-1)].dir*=-1;let net=cells.reduce((s,c)=>s+c.dir*c.v,0);if(net===0){cells[0].v+=1.5;net=cells.reduce((s,c)=>s+c.dir*c.v,0)}return qBase('batteries','Batteries in series — aiding and opposing','Find the signed net battery voltage <strong>V(R) − V(L)</strong>, moving left to right. A cell contributes a positive rise when its positive terminal is on the right, and a negative drop when opposing.',cellSvg(cells),numAns(net,'V'),`Add the signed cell voltages (left to right): ${cells.map(c=>(c.dir===1?'+':'−')+eng(c.v,'V')).join(' ')} = <strong>${eng(net,'V')}</strong>. Negative means the right terminal is at lower potential than the left.`);}
+function batteryQuantityQuestion(kind){if(kind==='parallel'){let I1=rand(5,40)*.001,I2=rand(5,40)*.001,rs=[220,470],currentLabels=[`I₁ = ${eng(I1,'A')}`,`I₂ = ${eng(I2,'A')}`];return qBase('batteries','Battery current — parallel branches','Two branches draw the currents marked in the schematic. Find the <strong>total battery current</strong> using KCL.',parallelSvg(rs,{source:'Vₛ',currentLabels}),numAns(I1+I2,'A'),`Battery current is the sum of the branch currents: ${eng(I1,'A')} + ${eng(I2,'A')} = <strong>${eng(I1+I2,'A')}</strong>.`);}
+ const rs=[pick([10,22,47,100,220,470]),pick([10,22,47,100,220,470])],R=rs[0]+rs[1],I=pick([.005,.01,.02,.03,.05,.1]),V=I*R;if(kind==='current')return qBase('batteries','Find battery current (series circuit)',`A battery supplies ${eng(V,'V')} to the series resistors shown. What is the current <strong>drawn from the battery</strong>?`,seriesSvg(rs,eng(V,'V')),numAns(I,'A'),`The series equivalent is ${eng(rs[0],'Ω')} + ${eng(rs[1],'Ω')} = ${eng(R,'Ω')}. Therefore I_battery = Vₛ / Rₜ = <strong>${eng(I,'A')}</strong>.`);
+ return qBase('batteries','Find battery voltage (series circuit)',`The battery supplies a measured current of <strong>${eng(I,'A')}</strong> through these series resistors. Calculate the required battery voltage.`,seriesSvg(rs,'Vₛ = ?'),numAns(V,'V'),`Rₜ = ${eng(rs[0],'Ω')} + ${eng(rs[1],'Ω')} = ${eng(R,'Ω')}; V_battery = I × Rₜ = <strong>${eng(V,'V')}</strong>.`);}
+function powerQuestion(kind){let R=pick([47,100,220,470,1000,2200]),I=pick([.002,.005,.01,.02,.05,.1]),V=R*I,P=V*I;if(kind==='P')return qBase('power','Electrical power dissipated','Use the voltage and current to calculate the power dissipated by the resistor.',ohmSvg(R,I,V),numAns(P,'W'),`P = VI = ${eng(V,'V')} × ${eng(I,'A')} = <strong>${eng(P,'W')}</strong>. Equivalent forms are I²R and V²/R.`);
+ const R1=pick([100,220,470,1000]),R2=pick([100,220,470,1000]),Vs=pick([5,9,12,15,24]);return qBase('power','Voltage divider — output voltage','Two resistors are in series. The output is measured across the <strong>lower resistor R₂</strong> relative to the return node. Find Vout.',dividerSvg(R1,R2,Vs),numAns(Vs*R2/(R1+R2),'V'),`Vout = Vₛ × R₂/(R₁+R₂) = <strong>${eng(Vs*R2/(R1+R2),'V')}</strong>.`);}
+const TEMPLATES={
+ bands:[bandToValue,valueToBand],
+ resistance:[seriesResistance,()=>parallelResistance('same'),()=>parallelResistance('two'),()=>parallelResistance('mixed')],
+ kirchhoff:[kclQuestion,kvlQuestion],ohm:[()=>ohmQuestion('V'),()=>ohmQuestion('I'),()=>ohmQuestion('R')],
+ metric:[()=>metricQuestion('eng'),()=>metricQuestion('sci'),()=>metricQuestion('name')],
+ concepts:[conceptQuestion],
+ symbols:[...Object.keys(SYMBOLS).filter(k=>k!=='potentiometer').map(k=>()=>symbolQuestion(k)),...([0,90,180,270].map(deg=>()=>symbolQuestion('potentiometer',deg))),diodeQuestion,()=>ledQuestion('flat'),()=>ledQuestion('lead')],
+ formula:[()=>formulaQuestion('same'),()=>formulaQuestion('two'),()=>formulaQuestion('mixed')],
+ batteries:[batteryAidingQuestion,()=>batteryQuantityQuestion('current'),()=>batteryQuantityQuestion('voltage'),()=>batteryQuantityQuestion('parallel')],
+ power:[()=>powerQuestion('P'),()=>powerQuestion('divider')]
+};
+const STORAGE_KEY='ece101_quiz_v4_stats'; // Preserve students' existing scores.
+const UNITS_MODE_KEY='ece101_quiz_units_mode';
+let unitsMode=false;
+try{unitsMode=localStorage.getItem(UNITS_MODE_KEY)==='true'}catch(e){}
+$('unitsMode').checked=unitsMode;
+function engineeringEntryPlaceholder(){return unitsMode?'Enter value in engineering notation with units':'Enter value only, including engineering notation';}
+function refreshUnitsModeUI(){
+ $('unitsModeStatus').textContent=unitsMode?'Units required: answers without matching units are incorrect.':'Units optional: valid numeric answers may omit the unit.';
+ if(!question)return;
+ const a=question.answer;
+ if(a.type==='engineering')$('inputHint').textContent=unitsMode?'Enter engineering notation with the correctly capitalized physical unit.':'Use engineering notation. Units are optional.';
+ if(a.type==='resistorDecode')$('inputHint').textContent=unitsMode?'Include the correctly capitalized resistance unit; enter tolerance as 5 or 5%.':'Enter resistance in engineering notation (e.g. 4.7k); tolerance 5 or 5%. Units are optional.';
+ if(a.type==='scientific')$('inputHint').textContent=unitsMode?'Use scientific notation with the correctly capitalized physical unit.':'Use scientific notation (e.g. 4.7x10^4 or 4.7e4). Units are optional.';
+ // Update placeholder and unit badge without rebuilding the question or erasing typed input.
+ const answerField=$('answer1');
+ if(answerField&&(a.type==='engineering'||a.type==='resistorDecode'))
+  answerField.placeholder=engineeringEntryPlaceholder();
+ else if(answerField&&a.type==='scientific')
+  answerField.placeholder=unitsMode?'Enter value in scientific notation with units':'Enter value only, in scientific notation';
+ document.querySelectorAll('#answerForm .answerUnit').forEach(el=>{el.hidden=unitsMode});
+}
+$('unitsMode').addEventListener('change',e=>{unitsMode=e.target.checked;try{localStorage.setItem(UNITS_MODE_KEY,String(unitsMode))}catch(e){}refreshUnitsModeUI();});
+let stats={right:0,wrong:0,streak:0,questions:0},question=null,finished=false,selectedOption=null,queue=[],topicBags={};
+try{const p=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');if(p&&Number.isFinite(p.right)&&Number.isFinite(p.wrong))stats={right:p.right,wrong:p.wrong,streak:p.streak||0,questions:p.questions??(p.right+p.wrong)}}catch(e){}
+function saveStats(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(stats))}catch(e){}}
+function paintStats(){const count=stats.right+stats.wrong,pct=count?(stats.right/count*100):0;$('right').textContent=stats.right;$('wrong').textContent=stats.wrong;$('streak').textContent=stats.streak;$('percent').textContent=count?`${pct.toFixed(1)}%`:'—';$('accuracyBar').style.width=pct+'%';}
+function toast(message){const node=$('toast');node.textContent=message;node.classList.add('show');setTimeout(()=>node.classList.remove('show'),2500);}
+function nextGenerator(){const mode=$('topicSelect').value;if(mode==='all'){if(!queue.length)queue=shuffle(Object.keys(TEMPLATES));const topic=queue.pop();return nextOfTopic(topic)}return nextOfTopic(mode);}
+function nextOfTopic(topic){if(!topicBags[topic]?.length)topicBags[topic]=shuffle(TEMPLATES[topic]);return topicBags[topic].pop();}
+function inputHTML(placeholder='e.g. 4.7k',unit=''){return `<div class="inputrow"><input id="answer1" class="answerField" type="text" inputmode="text" aria-label="Answer" spellcheck="false" autocapitalize="off" placeholder="${unitEsc(placeholder)}" required>${unit?`<div class="unit answerUnit" aria-hidden="true" ${unitsMode?'hidden':''}>${unitEsc(unit)}</div>`:''}</div>`;}
+function buildAnswer(){const a=question.answer,el=$('answerForm');$('answerTitle').textContent='Your answer';$('inputHint').textContent='';selectedOption=null;
+ if(a.type==='engineering'){el.innerHTML=inputHTML(engineeringEntryPlaceholder(),a.unit);$('inputHint').textContent=unitsMode?'Include the correctly capitalized physical unit with your engineering-notation answer.':'Use normalized engineering notation. Units are optional.';}
+ else if(a.type==='resistorDecode'){
+  el.innerHTML=`<div class="twofields"><div class="inputGroup"><label class="inputLabel" for="answer1">Resistance value</label>${inputHTML(engineeringEntryPlaceholder(),'Ω')}</div><div class="inputGroup"><label class="inputLabel" for="answer2">Tolerance (%)</label><div class="inputrow"><input id="answer2" class="answerField" type="text" inputmode="decimal" placeholder="e.g. 5" required><div class="unit" aria-hidden="true">%</div></div></div></div>`;
+  $('inputHint').textContent=unitsMode?'Include the correctly capitalized resistance unit; tolerance is a percentage (e.g. 5 or 5%).':'Example: resistance 4.7k and tolerance 5. Units are optional.';
+ }
+ else if(a.type==='colors'){
+  let s='<div class="bandgrid">';for(let i=0;i<5;i++){s+=`<div><label for="band${i}">Band ${i+1}</label><select class="bandPicker" id="band${i}" aria-label="Color band ${i+1}"><option value="">— unused —</option>${COLORS.map(c=>`<option value="${c}">${c}</option>`).join('')}</select></div>`;}s+='</div>';el.innerHTML=s;$('inputHint').textContent='Choose colors from left to right. Leave unused selectors at the end only; the resistor preview updates as you choose.';
+  el.querySelectorAll('select').forEach(sel=>sel.addEventListener('change',()=>{let bandArr=Array.from(el.querySelectorAll('select'),x=>x.value||null);$('visual').innerHTML=resistorBandSvg(bandArr,true)}));
+ }
+ else if(a.type==='choice'){
+  el.innerHTML=`<div class="choiceGrid" role="group" aria-label="Multiple-choice answers">${a.options.map((opt,i)=>`<button type="button" class="choiceBtn" data-option="${unitEsc(opt.id)}"><strong>${String.fromCharCode(65+i)}.</strong> ${unitEsc(opt.label)}</button>`).join('')}</div>`;
+  el.querySelectorAll('.choiceBtn').forEach(b=>b.addEventListener('click',()=>{if(finished)return;selectedOption=b.dataset.option;el.querySelectorAll('.choiceBtn').forEach(x=>{x.classList.toggle('selected',x===b);x.setAttribute('aria-pressed',x===b?'true':'false')})}));$('inputHint').textContent='Press A–D to select an answer, then Enter to check (or use the buttons).';
+ }
+ else if(a.type==='scientific'){el.innerHTML=inputHTML(unitsMode?'Enter value in scientific notation with units':'Enter value only, in scientific notation',a.unit);$('inputHint').textContent=unitsMode?'Include the correctly capitalized physical unit with your scientific-notation answer.':'Scientific notation only; e.g. 4.7x10^4 or 4.7e4. Unit labels are optional.';}
+ else if(a.type==='text'){el.innerHTML=inputHTML('Type your answer');$('inputHint').textContent='Use a short word or phrase. Common equivalent wordings are accepted.';}
+ const first=el.querySelector('input,select');if(first)first.focus({preventScroll:true});}
+function nextQuestion(){const generator=nextGenerator();question=generator();finished=false;$('topicTag').textContent=topics[question.topic]||question.topic;$('questionNum').textContent=`Question ${stats.right+stats.wrong+1}`;$('questionTitle').textContent=question.title;$('prompt').innerHTML=question.statement;$('visual').innerHTML=question.art||'';const aux=$('questionAuxBtn');if(question.chartButton){aux.hidden=false;aux.textContent='Show resistor chart';aux.onclick=()=>openChartModal(question.bandCount||4);}else{aux.hidden=true;aux.onclick=null;closeChartModal();}$('feedback').className='feedback';$('feedbackBody').textContent='';$('feedbackTitle').textContent='';$('checkBtn').hidden=false;$('skipBtn').hidden=false;$('nextBtn').hidden=true;$('phaseLabel').textContent='One score per question';buildAnswer();}
+function setChartModal(count){const img=$('chartImage'); if(!img)return; const c=String(count); img.src=RESISTOR_CHARTS[c]||RESISTOR_CHARTS[count]||RESISTOR_CHARTS[4]; img.alt=`${count}-band resistor color-code chart`; ['3','4','5'].forEach(n=>{const b=$('chartBtn'+n); if(b)b.classList.toggle('active',n===c);});}
+function openChartModal(count=4){const modal=$('chartModal'); if(!modal)return; setChartModal(count); modal.hidden=false; modal.setAttribute('aria-hidden','false'); const close=$('chartCloseBtn'); if(close)close.focus({preventScroll:true});}
+function closeChartModal(){const modal=$('chartModal'); if(!modal)return; modal.hidden=true; modal.setAttribute('aria-hidden','true');}
+function normalizedText(v){return String(v).toLowerCase().replace(/[‐‑–—]/g,'-').replace(/[^a-z0-9 ]+/g,' ').replace(/\b(the|a|an)\b/g,' ').replace(/\s+/g,' ').trim();}
+function evaluate(){let a=question.answer;
+ if(a.type==='choice')return selectedOption?{provided:true,correct:selectedOption===a.correct}: {provided:false};
+ if(a.type==='colors'){
+  const colors=Array.from({length:5},(_,i)=>$('band'+i).value);if(colors.every(x=>!x))return {provided:false};
+  let i=colors.findIndex(c=>!c);if(i!==-1&&colors.slice(i).some(Boolean))return {provided:true,correct:false,reason:'Band colors must be consecutive; unused bands go at the end.'};
+  const decoded=decodeBands(colors.filter(Boolean));return {provided:true,correct:!!decoded&&exactNominal(decoded.value,a.expected)&&decoded.tol===a.tol,reason:decoded?`These bands decode to ${eng(decoded.value,'Ω')} ±${decoded.tol}%.`:'That is not a valid 3-, 4-, or 5-band resistor code.'};
+ }
+ const input=$('answer1')?.value.trim()||'';if(!input)return {provided:false};
+ if(a.type==='engineering'||a.type==='resistorDecode'){
+  const v=parseEngineering(input);if(!v)return {provided:true,correct:false,reason:'Enter a numeric value in engineering notation, optionally followed by a valid unit (e.g. 4.7kΩ or 100mA).'};
+  if(!v.normalized)return {provided:true,correct:false,reason:'Use normalized engineering notation (a coefficient from 1 to less than 1000), such as 10k rather than 10000 or 0.01M.'};
+  if(a.type==='resistorDecode'){
+   const rawTol=$('answer2').value.trim();if(!rawTol)return {provided:false};
+   const unitProblem=unitError(v.unit,'Ω');
+   if(unitProblem)return {provided:true,correct:false,reason:unitProblem};
+   const tolText=rawTol.replace(/\s/g,'').replace(/^[±+\-]/,'').replace(/%$/,'');
+   const val=Number(tolText);
+   return {provided:true,correct:exactNominal(v.value,a.expected)&&!!tolText&&Number.isFinite(val)&&Math.abs(val-a.tol)<1e-6,reason:`Your entry represents ${eng(v.value,'Ω')} ±${Number.isFinite(val)?val+'%':'(invalid tolerance)'}.`};
+  }
+  const unitProblem=unitError(v.unit,a.unit);
+  if(unitProblem)return {provided:true,correct:false,reason:unitProblem};
+  return {provided:true,correct:near(v.value,a.expected),reason:!near(v.value,a.expected)?`Your entry represents ${eng(v.value,a.unit)}.`:null};
+ }
+ if(a.type==='scientific'){
+  const result=parseScientific(input);
+  if(!result)return {provided:true,correct:false,reason:'Use scientific notation, such as 4.7x10^4 or 4.7e4, followed by the physical unit if Units Mode is ON.'};
+  const unitProblem=unitError(result.unit,a.unit);
+  if(unitProblem)return {provided:true,correct:false,reason:unitProblem};
+  return {provided:true,correct:near(result.value,a.expected),reason:`Your entry represents ${sciText(result.value)} ${result.unit}.`};
+ }
+ if(a.type==='text'){
+  const value=normalizedText(input);const accepted=a.accepted.some(s=>normalizedText(s)===value);
+  let flexible=false;if(question.title==='What is a short circuit?')flexible=/(short|unintended|accidental|bypass|low resistance|zero resistance)/.test(value)&&/(path|current|bypass|connection|circuit)/.test(value);
+  if(question.title==='Safely measuring resistance')flexible=/(power|supply|source|deenergize|de energized|unpowered)/.test(value)&&/(off|remove|disconnect|disable|cut|isolate|unpowered|deenergize|de energized)/.test(value);
+  return {provided:true,correct:accepted||flexible};
+ }
+ return {provided:true,correct:false};
+}
+function answerExplanation(){let a=question.answer;
+ if(a.type==='engineering'||a.type==='resistorDecode')return a.type==='resistorDecode'?`${eng(a.expected,'Ω')} ±${a.tol}%`:`${eng(a.expected,a.unit)}`;
+ if(a.type==='colors')return `Valid bands for ${eng(a.expected,'Ω')} ±${a.tol}% (see explanation)`;
+ if(a.type==='choice')return a.options.find(x=>x.id===a.correct)?.label||a.correct;
+ if(a.type==='scientific')return `${sciText(a.expected)} ${a.unit||''}`;
+ if(a.type==='text')return a.display||a.accepted[0];return '';
+}
+function mark(correct,skipped=false,result={}){if(finished)return;finished=true;if(correct){stats.right++;stats.streak++}else{stats.wrong++;stats.streak=0}stats.questions=stats.right+stats.wrong;saveStats();paintStats();$('checkBtn').hidden=true;$('skipBtn').hidden=true;$('nextBtn').hidden=false;$('phaseLabel').textContent='Counted · ready for next';
+ const feedback=$('feedback');feedback.className='feedback show '+(correct?'success':'error');$('feedbackTitle').innerHTML=correct?'<strong>✓ Correct</strong> · +1 point':`<strong>${skipped?'↷ Skipped':'✕ Not quite'}</strong> · counted incorrect`;
+ let reason=result.reason?`<p>${unitEsc(result.reason)}</p>`:'';$('feedbackBody').innerHTML=`${correct?'':'<p><strong>Expected: </strong>'+answerExplanation()+'</p>'}${reason}<p>${question.explanation}</p>`;
+ $('answerForm').querySelectorAll('input,select,button').forEach(c=>c.disabled=true);
+ if(question.answer.type==='choice')$('answerForm').querySelectorAll('.choiceBtn').forEach(b=>{
+  const isCorrect=b.dataset.option===question.answer.correct;
+  b.classList.toggle('correct',isCorrect);
+  b.classList.toggle('incorrect',b.dataset.option===selectedOption&&!isCorrect);
+ });
+ $('nextBtn').focus({preventScroll:true});}
+function submitAnswer(){if(finished){nextQuestion();return}const check=evaluate();if(!check.provided){toast('Enter or choose an answer before checking.');return}mark(check.correct,false,check)}
+$('checkBtn').addEventListener('click',submitAnswer);$('nextBtn').addEventListener('click',nextQuestion);$('skipBtn').addEventListener('click',()=>mark(false,true));
+const _chartModal=$('chartModal'),_chartCloseBtn=$('chartCloseBtn'),_chartBtn3=$('chartBtn3'),_chartBtn4=$('chartBtn4'),_chartBtn5=$('chartBtn5');
+if(_chartCloseBtn)_chartCloseBtn.addEventListener('click',closeChartModal);
+if(_chartBtn3)_chartBtn3.addEventListener('click',()=>setChartModal(3));
+if(_chartBtn4)_chartBtn4.addEventListener('click',()=>setChartModal(4));
+if(_chartBtn5)_chartBtn5.addEventListener('click',()=>setChartModal(5));
+if(_chartModal)_chartModal.addEventListener('click',e=>{if(e.target===_chartModal)closeChartModal();});
+$('answerForm').addEventListener('submit',e=>{e.preventDefault();submitAnswer()});
+document.addEventListener('keydown',e=>{
+ const modal=$('chartModal');
+ if(modal&&!modal.hidden){if(e.key==='Escape'){e.preventDefault();closeChartModal();$('questionAuxBtn').focus({preventScroll:true});}return;}
+ if(e.isComposing||e.repeat||e.ctrlKey||e.altKey||e.metaKey)return;
+ const tag=e.target?.tagName||'';
+ const editing=tag==='INPUT'||tag==='TEXTAREA'||tag==='SELECT'||e.target?.isContentEditable;
+ // A-D select exactly one of the four visible choices.
+ if(!finished&&question&&question.answer.type==='choice'&&!editing&&/^[a-d]$/i.test(e.key)){
+  const index=e.key.toUpperCase().charCodeAt(0)-65;
+  const button=$('answerForm').querySelectorAll('.choiceBtn')[index];
+  if(button){e.preventDefault();button.click();return;}
+ }
+ if(e.key!=='Enter'||tag==='SELECT')return;
+ // Enter submits the selection even when a choice button has keyboard focus.
+ e.preventDefault();
+ if(finished)nextQuestion();else submitAnswer();
+});
+$('topicSelect').addEventListener('change',()=>{queue=[];nextQuestion()});
+$('resetBtn').addEventListener('click',()=>{if(confirm('Reset all cumulative correct, incorrect, accuracy, and streak totals?')){stats={right:0,wrong:0,streak:0,questions:0};saveStats();paintStats();nextQuestion()}});
+paintStats();nextQuestion();refreshUnitsModeUI();
+</script>
+</body>
+</html>
