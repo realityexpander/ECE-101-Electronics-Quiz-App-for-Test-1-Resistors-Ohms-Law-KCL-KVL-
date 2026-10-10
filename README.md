@@ -2,7 +2,7 @@
 
 ![ECE-101 Drill Quiz app running in a browser, showing a resistor color-band question, score tracking, and engineering entry rules](ece101_app_screenshot.png)
 
-**[Launch the live quiz](https://realityexpander.github.io/ECE-101-Electronics-Quiz-App-for-Test-1-Resistors-Ohms-Law-KCL-KVL-/)** · [GitHub repository](https://github.com/realityexpander/ECE-101-Electronics-Quiz-App-for-Test-1-Resistors-Ohms-Law-KCL-KVL-)
+**[Launch the live quiz](https://realityexpander.github.io/ECE-101-Electronics-Quiz-App-for-Test-1-Resistors-Ohms-Law-KCL-KVL-/)** 
 
 An interactive, single-page electrical engineering practice quiz for **ECE-101 Test 1** at **Midlands Technical College**. It combines randomized calculations, circuit diagrams, component-symbol identification, and conceptual questions. The app is built with HTML, CSS, and vanilla JavaScript; no framework, account, or build process is required.
 
@@ -17,6 +17,7 @@ An interactive, single-page electrical engineering practice quiz for **ECE-101 T
 - **ANSI-style diagrams:** U.S.-style zigzag resistors, source and meter symbols, and properly separated schematic wires.
 - **Keyboard controls:** Use **A–D** to select a multiple-choice option, **Enter** to check the answer, and **Enter** again to advance.
 - **Responsive interface:** Designed for desktop browsers and mobile screens.
+- Link to conversation that generated the app: https://chatgpt.com/share/6ac99c7f-8d68-83ea-8922-e50d36c6190c
 
 ## Topics covered
 
