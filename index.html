@@ -56,16 +56,16 @@
 </head>
 <body>
 <div class="shell">
-<header class="topbar"><div class="identity"><div class="logo" aria-hidden="true">Ω</div><div><div class="eyebrow">Electrical Engineering · ECE-101</div><h1>Drill Quiz for Test 1 <span>- Midlands Technical College</span></h1><div class="subtle">Practice circuits, symbols, resistor codes, and unit conversions.</div></div></div><div class="topNote">Single-page · Randomized problems<br>Results saved on this device</div></header>
+<header class="topbar"><div class="identity"><div class="logo" aria-hidden="true">Ω</div><div><div class="eyebrow">Electrical Engineering · ECE-101</div><h1>Drill Quiz for Test 1 <span>- Midlands Technical College</span></h1><div class="subtle">Practice circuits, schematic symbols, resistor codes, KCL, KVL, metric engineering notation, resistance formulas, Ohm's Law and Watt's Law.</div></div></div><div class="topNote">Randomized problems<br>Results saved on this device</div></header>
 <div class="stats" aria-label="Cumulative quiz score"><div class="stat"><div class="statLabel">Correct</div><div class="statValue" id="right">0</div></div><div class="stat"><div class="statLabel">Incorrect</div><div class="statValue" id="wrong">0</div></div><div class="stat"><div class="statLabel">Current streak</div><div class="statValue" id="streak">0</div></div><div class="stat"><div class="statLabel">Accuracy</div><div class="statValue" id="percent">—</div><div class="progress"><div id="accuracyBar"></div></div></div></div>
-<div class="layout"><main class="panel questionPanel" aria-label="Quiz questions"><div class="tools"><div class="fieldSelect"><label for="topicSelect">PRACTICE TOPIC</label><select id="topicSelect"><option value="all">All topics · mixed practice</option><option value="bands">Resistor color bands</option><option value="resistance">Series & parallel resistance</option><option value="kirchhoff">KCL & KVL</option><option value="ohm">Ohm's law</option><option value="metric">Metric prefixes</option><option value="concepts">Meters & circuit concepts</option><option value="symbols">Schematic symbols & polarity</option><option value="formula">Parallel resistance formulas</option><option value="batteries">Batteries: aiding & opposing</option><option value="power">Power & dividers (bonus)</option></select></div><button class="btn smallBtn mutedBtn" type="button" id="resetBtn" title="Clear cumulative correct, incorrect, and streak totals">↺ Reset score</button></div>
+<div class="layout"><main class="panel questionPanel" aria-label="Quiz questions"><div class="tools"><div class="fieldSelect"><label for="topicSelect">PRACTICE TOPIC</label><select id="topicSelect"><option value="all">All topics · mixed practice</option><option value="bands">Resistor color bands</option><option value="resistance">Series & parallel resistance</option><option value="kirchhoff">KCL & KVL</option><option value="ohm">Ohm's law</option><option value="metric">Metric prefixes</option><option value="concepts">Meters & circuit concepts</option><option value="symbols">Schematic symbols & polarity</option><option value="formula">Parallel resistance formulas</option><option value="batteries">Batteries: aiding & opposing</option><option value="power">Power &amp; Dividers</option><option value="multiLaw">Multi-step Ohm's Law &amp; Watt's Law Triangles</option></select></div><button class="btn smallBtn mutedBtn" type="button" id="resetBtn" title="Clear cumulative correct, incorrect, and streak totals">↺ Reset score</button></div>
 <div class="quizmeta"><span class="tag" id="topicTag">PRACTICE</span><span class="questionIndex" id="questionNum">Question 1</span></div><div class="titleRow"><h2 class="questionTitle" id="questionTitle">Loading question…</h2><button class="btn smallBtn mutedBtn questionAuxBtn" id="questionAuxBtn" type="button" hidden>Show resistor chart</button></div><p class="prompt" id="prompt"></p><div class="visual" id="visual" aria-label="Question diagram"></div>
 <div class="answerHead" id="answerTitle">Your answer</div><form class="answerForm" id="answerForm" autocomplete="off"></form><div class="hint" id="inputHint"></div>
 <div class="actions"><button class="btn primary" id="checkBtn" type="button">Check answer ↵</button><button class="btn mutedBtn" id="skipBtn" type="button">Skip · counts wrong</button><button class="btn primary" id="nextBtn" type="button" hidden>Next question →</button><span class="subtle rightAction" id="phaseLabel">One score per question</span></div>
 <div class="feedback" id="feedback" role="status" aria-live="polite"><div class="feedbackTitle" id="feedbackTitle"></div><div class="feedbackBody" id="feedbackBody"></div></div></main>
 <aside class="sidebar"><section class="panel sideCard"><h2>Engineering entry rules</h2><p>Enter answers using an <strong>engineering prefix</strong> when appropriate. Type <span class="chipcode">10 k</span> or <span class="chipcode">10k</span>, not <span class="chipcode">10000</span>; type <span class="chipcode">100 m</span> or <span class="chipcode">100m</span>, not <span class="chipcode">0.1</span>.</p><label class="unitsModeControl" for="unitsMode"><input id="unitsMode" type="checkbox"><span><strong>Units Mode</strong><small>Require correct units in numerical answers</small></span></label><p id="unitsModeStatus" class="unitsModeStatus" aria-live="polite">Units optional.</p><p>When Units Mode is enabled, include the correct unit, e.g.: <span class="chipcode">12mA</span>, <span class="chipcode">12 mA</span>, <span class="chipcode">12 mV</span>, <span class="chipcode">12 kΩ</span>, <span class="chipcode">12kΩ</span>, or <span class="chipcode">12mW</span>. For resistance, <span class="chipcode">O</span>, <span class="chipcode">Ohm</span>, <span class="chipcode">Ohms</span>, and <span class="chipcode">Ω</span> are accepted. <strong>Spaces are ignored.</strong></p><p><span class="chipcode">u</span> and <span class="chipcode">µ</span> both mean micro. Capitalization matters for both prefixes and units: <span class="chipcode">M</span> = mega, <span class="chipcode">m</span> = milli; <span class="chipcode">mA</span> is valid but <span class="chipcode">ma</span> is not when in Units Mode.</p><p>Calculated numerical results allow <strong>±0.5%</strong> rounding error. Prefix and answer-format rules still apply.</p></section>
 <section class="panel sideCard"><h2>Practice controls</h2><p>Use the topic menu to focus on one subject. The score stays cumulative when you change topics or reload the page.</p><p>For multiple-choice questions, press <span class="key">A</span>–<span class="key">D</span> to select one answer. Press <span class="key">Enter</span> to check it, then press Enter again for the next question. A skipped question counts as incorrect.</p><details class="bandRefDetails"><summary>Color-band reference</summary><div class="bandRefWrap"><table class="bandRefTable"><thead><tr><th scope="col">Color</th><th scope="col">Digit</th><th scope="col">Multiplier</th><th scope="col">Tolerance</th></tr></thead><tbody><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#171a20"></span>Black</th><td>0</td><td>×1</td><td>—</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#89522e"></span>Brown</th><td>1</td><td>×10</td><td>±1%</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#ed4447"></span>Red</th><td>2</td><td>×100</td><td>±2%</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#ec9038"></span>Orange</th><td>3</td><td>×1K</td><td>±0.05%</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#f4d452"></span>Yellow</th><td>4</td><td>×10K</td><td>±0.02%</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#329d74"></span>Green</th><td>5</td><td>×100K</td><td>±0.5%</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#3889dc"></span>Blue</th><td>6</td><td>×1M</td><td>±0.25%</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#9357bf"></span>Violet</th><td>7</td><td>×10M</td><td>±0.1%</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#89949f"></span>Grey</th><td>8</td><td>×100M</td><td>±0.01%</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#f6f8f9"></span>White</th><td>9</td><td>×1G</td><td>—</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#d5b158"></span>Gold</th><td>—</td><td>×0.1</td><td>±5%</td></tr><tr><th scope="row"><span class="bandSwatch" aria-hidden="true" style="background:#bac5ce"></span>Silver</th><td>—</td><td>×0.01</td><td>±10%</td></tr></tbody></table></div><p class="bandRefNote">No tolerance band: ±20%. For 3-band resistors, the third band is the multiplier.</p></details></section></aside></div>
-<div class="foot">©2026 Chris Athanas. Link to source on <a href="https://github.com/realityexpander/ECE-101-Electronics-Quiz-App-for-Test-1-Resistors-Ohms-Law-KCL-KVL-" target="_blank" rel="noopener noreferrer">GitHub</a> · ECE-101 Drill Quiz v20</div></div><div class="toast" id="toast" role="alert"></div>
+<div class="foot">©2026 Chris Athanas. Link to source on <a href="https://github.com/realityexpander/ECE-101-Electronics-Quiz-App-for-Test-1-Resistors-Ohms-Law-KCL-KVL-" target="_blank" rel="noopener noreferrer">GitHub</a> · ECE-101 Drill Quiz v30</div></div><div class="toast" id="toast" role="alert"></div>
 <div class="modalBackdrop" id="chartModal" hidden aria-hidden="true"><div class="panel modalCard" role="dialog" aria-modal="true" aria-labelledby="chartModalTitle"><div class="modalHead"><h3 id="chartModalTitle">Resistor color-band charts</h3><button class="btn smallBtn mutedBtn" type="button" id="chartCloseBtn">Close ×</button></div><div class="modalImageWrap"><img id="chartImage" alt="Resistor color-band reference chart"></div><div class="modalTabs"><button class="btn smallBtn mutedBtn" id="chartBtn3" type="button">3 band</button><button class="btn smallBtn mutedBtn" id="chartBtn4" type="button">4 band</button><button class="btn smallBtn mutedBtn" id="chartBtn5" type="button">5 band</button></div><div class="modalLinks">Reference images: <a href="resistor_chart_3_band.png" target="_blank" rel="noopener">3 band</a> · <a href="resistor_chart_4_band.png" target="_blank" rel="noopener">4 band</a> · <a href="resistor_chart_5_band.png" target="_blank" rel="noopener">5 band</a></div></div></div>
 <script>
 'use strict';
@@ -75,7 +75,7 @@ const COLHEX={Black:'#171a20',Brown:'#89522e',Red:'#ed4447',Orange:'#ec9038',Yel
 const DIGITS=COLORS.slice(0,10), MULTS={Black:0,Brown:1,Red:2,Orange:3,Yellow:4,Green:5,Blue:6,Violet:7,Grey:8,White:9,Gold:-1,Silver:-2};
 const TOL={Brown:1,Red:2,Gold:5,Silver:10};
 const PREFIX=[{p:'p',e:-12,n:'pico'},{p:'n',e:-9,n:'nano'},{p:'µ',e:-6,n:'micro'},{p:'m',e:-3,n:'milli'},{p:'',e:0,n:'base'},{p:'k',e:3,n:'kilo'},{p:'M',e:6,n:'mega'},{p:'G',e:9,n:'giga'},{p:'T',e:12,n:'tera'}];
-const topics={bands:'Resistor bands',resistance:'Equivalent resistance',kirchhoff:"Kirchhoff's laws",ohm:"Ohm's law",metric:'Metric prefixes',concepts:'Meters & behavior',symbols:'Symbols & polarity',formula:'Parallel formulas',batteries:'Battery networks',power:'Power & dividers'};
+const topics={bands:'Resistor bands',resistance:'Equivalent resistance',kirchhoff:"Kirchhoff's laws",ohm:"Ohm's law",metric:'Metric prefixes',concepts:'Meters & behavior',symbols:'Symbols & polarity',formula:'Parallel formulas',batteries:'Batteries: aiding & opposing',power:'Power & Dividers',multiLaw:'Multi-step Ohm’s & Watt’s Law'};
 const RESISTOR_CHARTS={3:'resistor_chart_3_band.png',4:'resistor_chart_4_band.png',5:'resistor_chart_5_band.png'};
 const rand=(a,b)=>Math.floor(Math.random()*(b-a+1))+a, pick=a=>a[rand(0,a.length-1)], shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){let j=rand(0,i);[a[i],a[j]]=[a[j],a[i]];}return a;};
 const resistors=[10,22,33,47,68,100,150,220,330,470,680,1000,1500,2200,3300,4700,6800,10000,15000,22000];
@@ -318,21 +318,249 @@ function ledQuestion(kind){const cath=pick(['left','right']);return qBase('symbo
 const FORMULAS={same:'Rₜ = R / N',two:'Rₜ = (R₁ × R₂) / (R₁ + R₂)',mixed:'Rₜ = 1 / (1/R₁ + 1/R₂ + ⋯ + 1/Rₙ)'};
 function formulaQuestion(kind){let desc={same:'All resistors have identical resistance R. Which formula calculates their equivalent resistance when N resistors are in parallel?',two:'Exactly two resistors, R₁ and R₂, are in parallel. Which formula gives their equivalent resistance?',mixed:'Any number of resistors, potentially all with different values, are in parallel. Which formula works in general?'}[kind];const choices=shuffle([{id:kind,label:FORMULAS[kind]},{id:'series',label:'Rₜ = R₁ + R₂ + ⋯ + Rₙ'},...Object.entries(FORMULAS).filter(([k])=>k!==kind).map(([id,label])=>({id,label}))]);return qBase('formula',`Parallel formula — ${kind==='same'?'equal values':kind==='two'?'two resistors':'general case'}`,desc,null,{type:'choice',correct:kind,options:choices},`Correct: <strong>${FORMULAS[kind]}</strong>. ${kind==='same'?'For N identical parallel resistors, divide the resistance of one by N.':kind==='two'?'For exactly two parallel resistors, use product over sum.':'The reciprocal formula works for all parallel combinations.'}`);}
 function batteryAidingQuestion(){let n=rand(2,4),cells=Array.from({length:n},()=>({v:pick([1.5,3,4.5,6,9,12]),dir:pick([-1,1])}));if(cells.every(c=>c.dir===1)||cells.every(c=>c.dir===-1))cells[rand(0,n-1)].dir*=-1;let net=cells.reduce((s,c)=>s+c.dir*c.v,0);if(net===0){cells[0].v+=1.5;net=cells.reduce((s,c)=>s+c.dir*c.v,0)}return qBase('batteries','Batteries in series — aiding and opposing','Find the signed net battery voltage <strong>V(R) − V(L)</strong>, moving left to right. A cell contributes a positive rise when its positive terminal is on the right, and a negative drop when opposing.',cellSvg(cells),numAns(net,'V'),`Add the signed cell voltages (left to right): ${cells.map(c=>(c.dir===1?'+':'−')+eng(c.v,'V')).join(' ')} = <strong>${eng(net,'V')}</strong>. Negative means the right terminal is at lower potential than the left.`);}
-function batteryQuantityQuestion(kind){if(kind==='parallel'){let I1=rand(5,40)*.001,I2=rand(5,40)*.001,rs=[220,470],currentLabels=[`I₁ = ${eng(I1,'A')}`,`I₂ = ${eng(I2,'A')}`];return qBase('batteries','Battery current — parallel branches','Two branches draw the currents marked in the schematic. Find the <strong>total battery current</strong> using KCL.',parallelSvg(rs,{source:'Vₛ',currentLabels}),numAns(I1+I2,'A'),`Battery current is the sum of the branch currents: ${eng(I1,'A')} + ${eng(I2,'A')} = <strong>${eng(I1+I2,'A')}</strong>.`);}
- const rs=[pick([10,22,47,100,220,470]),pick([10,22,47,100,220,470])],R=rs[0]+rs[1],I=pick([.005,.01,.02,.03,.05,.1]),V=I*R;if(kind==='current')return qBase('batteries','Find battery current (series circuit)',`A battery supplies ${eng(V,'V')} to the series resistors shown. What is the current <strong>drawn from the battery</strong>?`,seriesSvg(rs,eng(V,'V')),numAns(I,'A'),`The series equivalent is ${eng(rs[0],'Ω')} + ${eng(rs[1],'Ω')} = ${eng(R,'Ω')}. Therefore I_battery = Vₛ / Rₜ = <strong>${eng(I,'A')}</strong>.`);
- return qBase('batteries','Find battery voltage (series circuit)',`The battery supplies a measured current of <strong>${eng(I,'A')}</strong> through these series resistors. Calculate the required battery voltage.`,seriesSvg(rs,'Vₛ = ?'),numAns(V,'V'),`Rₜ = ${eng(rs[0],'Ω')} + ${eng(rs[1],'Ω')} = ${eng(R,'Ω')}; V_battery = I × Rₜ = <strong>${eng(V,'V')}</strong>.`);}
+function batteryQuantityQuestion(kind){if(kind==='parallel'){let I1=rand(5,40)*.001,I2=rand(5,40)*.001,rs=[220,470],currentLabels=[`I₁ = ${eng(I1,'A')}`,`I₂ = ${eng(I2,'A')}`];return qBase('kirchhoff','Battery current — parallel branches','Two branches draw the currents marked in the schematic. Find the <strong>total battery current</strong> using KCL.',parallelSvg(rs,{source:'Vₛ',currentLabels}),numAns(I1+I2,'A'),`Battery current is the sum of the branch currents: ${eng(I1,'A')} + ${eng(I2,'A')} = <strong>${eng(I1+I2,'A')}</strong>.`);}
+ const rs=[pick([10,22,47,100,220,470]),pick([10,22,47,100,220,470])],R=rs[0]+rs[1],I=pick([.005,.01,.02,.03,.05,.1]),V=I*R;if(kind==='current')return qBase('ohm','Find battery current (series circuit)',`A battery supplies ${eng(V,'V')} to the series resistors shown. What is the current <strong>drawn from the battery</strong>?`,seriesSvg(rs,eng(V,'V')),numAns(I,'A'),`The series equivalent is ${eng(rs[0],'Ω')} + ${eng(rs[1],'Ω')} = ${eng(R,'Ω')}. Therefore I_battery = Vₛ / Rₜ = <strong>${eng(I,'A')}</strong>.`);
+ return qBase('ohm','Find battery voltage (series circuit)',`The battery supplies a measured current of <strong>${eng(I,'A')}</strong> through these series resistors. Calculate the required battery voltage.`,seriesSvg(rs,'Vₛ = ?'),numAns(V,'V'),`Rₜ = ${eng(rs[0],'Ω')} + ${eng(rs[1],'Ω')} = ${eng(R,'Ω')}; V_battery = I × Rₜ = <strong>${eng(V,'V')}</strong>.`);}
+
+function lampSeriesSvg(Vs,R1,Rlamp){
+ // Every connection ends exactly at a component terminal.
+ // The voltage source uses a single centered, circular DC source symbol,
+ // without battery plates that could overlap the Vₛ and voltage labels.
+ const sourceX=118, sourceY=170, sourceR=40;
+ const topY=94, bottomY=254;
+ const resistorX=314, resistorLeft=resistorX-RESISTOR_HALF, resistorRight=resistorX+RESISTOR_HALF;
+ const lampX=490, lampR=30, rightX=610;
+ let out=`${txt(474,34,'Series circuit','font-size="17"')}`;
+ // Top wire, resistor and right return wire.
+ out+=`${line(sourceX,topY,resistorLeft,topY)}${resistorBox(resistorX,topY,`R₁ = ${eng(R1,'Ω')}`)}`;
+ out+=`${line(resistorRight,topY,rightX,topY)}${line(rightX,topY,rightX,bottomY)}`;
+ // Bottom wire reaches the lamp at its two terminals; no wire crosses it.
+ out+=`${line(sourceX,bottomY,lampX-lampR,bottomY)}${line(lampX+lampR,bottomY,rightX,bottomY)}`;
+ // DC source: the circle is centered precisely on the left-side vertical wire.
+ out+=`${line(sourceX,topY,sourceX,sourceY-sourceR)}${line(sourceX,sourceY+sourceR,sourceX,bottomY)}`;
+ out+=`<circle cx="${sourceX}" cy="${sourceY}" r="${sourceR}" fill="#10263b" stroke="#d0e4f9" stroke-width="3"/>`;
+ out+=`${txt(sourceX,sourceY-5,'Vₛ','font-size="21"')}${txt(sourceX,sourceY+20,eng(Vs,'V'),'font-size="17"')}`;
+ out+=`${txt(67,148,'+','font-size="21"')}${txt(67,216,'−','font-size="21"')}`;
+ // ANSI lamp: circle with crossing diagonals, inline with its two leads.
+ out+=`<circle cx="${lampX}" cy="${bottomY}" r="${lampR}" fill="none" stroke="#d0e4f9" stroke-width="4"/>`;
+ out+=`<path d="M${lampX-16} ${bottomY-16} L${lampX+16} ${bottomY+16} M${lampX+16} ${bottomY-16} L${lampX-16} ${bottomY+16}" fill="none" stroke="#d0e4f9" stroke-width="3.5" stroke-linecap="round"/>`;
+ out+=`${txt(lampX,208,'Lamp','font-size="16"')}${txt(lampX,311,`R_lamp = ${eng(Rlamp,'Ω')}`,'font-size="16"')}`;
+ return svg(out,'0 0 720 345','Aligned series DC voltage source, resistor and lamp load schematic');
+}
+function lampPowerQuestion(){
+ const combos=[[5,10,15],[5,22,47],[6,10,20],[9,10,20],[9,15,30],[10,25,50],[12,15,45],[12,20,40],[15,10,50],[18,25,35],[24,30,90]];
+ const [Vs,R1,Rlamp]=pick(combos);
+ const Rt=R1+Rlamp, I=Vs/Rt, Vlamp=I*Rlamp, Plamp=Vlamp*I;
+ return qBase('power','Lamp load — find power',
+  `A source of <strong>${eng(Vs,'V')}</strong> drives <strong>R₁ = ${eng(R1,'Ω')}</strong> in series with a lamp modeled as <strong>R_lamp = ${eng(Rlamp,'Ω')}</strong>. Find the lamp power <strong>P_lamp</strong>. Only round the final answer.`,
+  lampSeriesSvg(Vs,R1,Rlamp),numAns(Plamp,'W'),
+  `Step 1: Find total series resistance: Rₜ = R₁ + R_lamp = ${eng(R1,'Ω')} + ${eng(Rlamp,'Ω')} = <strong>${eng(Rt,'Ω')}</strong>.<br>`+
+  `Step 2: Find the series current: I = Vₛ / Rₜ = ${fmtNumber(Vs)} / ${fmtNumber(Rt)} = <strong>${fmtNumber(I)} A</strong>.<br>`+
+  `Step 3: Find the lamp voltage: V_lamp = I × R_lamp = ${fmtNumber(I)} × ${fmtNumber(Rlamp)} = <strong>${fmtNumber(Vlamp)} V</strong>.<br>`+
+  `Step 4: Find lamp power: P_lamp = V_lamp × I = ${fmtNumber(Vlamp)} × ${fmtNumber(I)} = <strong>${eng(Plamp,'W')}</strong>.`);
+}
+function lampCurrentQuestion(){
+ const combos=[[0.02,10,15],[0.03,10,20],[0.04,20,30],[0.05,25,35],[0.06,50,25],[0.08,25,50],[0.1,20,40],[0.12,15,45],[0.15,10,50],[0.2,10,20]];
+ const [I,Rlamp,R1]=pick(combos);
+ const Vs=I*(R1+Rlamp), Plamp=I*I*Rlamp;
+ return qBase('power','Lamp load — find current from power',
+  `In the series circuit shown, the lamp is modeled as <strong>R_lamp = ${eng(Rlamp,'Ω')}</strong> and dissipates <strong>${eng(Plamp,'W')}</strong>. Find the current <strong>I</strong> through the lamp. Only round the final answer.`,
+  lampSeriesSvg(Vs,R1,Rlamp),numAns(I,'A'),
+  `Step 1: Start with the power relation for the lamp: P_lamp = V_lamp × I.<br>`+
+  `Step 2: Because V_lamp = R_lamp × I, substitute to get P_lamp = R_lamp × I².<br>`+
+  `Step 3: Solve for current: I² = P_lamp / R_lamp = ${fmtNumber(Plamp)} / ${fmtNumber(Rlamp)} = <strong>${fmtNumber(Plamp/Rlamp)}</strong>.<br>`+
+  `Step 4: Take the square root: I = √(${fmtNumber(Plamp/Rlamp)}) = <strong>${eng(I,'A')}</strong>.<br>`+
+  `In a series circuit this is also the current through R₁ and the source.`);
+}
 function powerQuestion(kind){let R=pick([47,100,220,470,1000,2200]),I=pick([.002,.005,.01,.02,.05,.1]),V=R*I,P=V*I;if(kind==='P')return qBase('power','Electrical power dissipated','Use the voltage and current to calculate the power dissipated by the resistor.',ohmSvg(R,I,V),numAns(P,'W'),`P = VI = ${eng(V,'V')} × ${eng(I,'A')} = <strong>${eng(P,'W')}</strong>. Equivalent forms are I²R and V²/R.`);
  const R1=pick([100,220,470,1000]),R2=pick([100,220,470,1000]),Vs=pick([5,9,12,15,24]);return qBase('power','Voltage divider — output voltage','Two resistors are in series. The output is measured across the <strong>lower resistor R₂</strong> relative to the return node. Find Vout.',dividerSvg(R1,R2,Vs),numAns(Vs*R2/(R1+R2),'V'),`Vout = Vₛ × R₂/(R₁+R₂) = <strong>${eng(Vs*R2/(R1+R2),'V')}</strong>.`);}
+
+// Exercises are built from consistent Ohm/Watt law data. Formula relationships
+// and numerical steps are intentionally hidden until a question is submitted.
+const LAW_UNITS={V:'V',I:'A',R:'Ω',P:'W'};
+// The four triangle families each have three rearrangements. Although I² or V²
+// appear in the algebra, the final questions always request V, I, R, or P.
+const LAW_FAMILIES={
+ vir:[['I','R','V'],['V','R','I'],['V','I','R']],
+ piv:[['V','I','P'],['P','V','I'],['P','I','V']],
+ pi2r:[['I','R','P'],['P','I','R'],['P','R','I']],
+ v2pr:[['V','R','P'],['V','P','R'],['P','R','V']]
+};
+const SINGLE_TYPES=['resistor','lamp'];
+const PAIR_TYPES=[['resistor','resistor'],['lamp','lamp'],['resistor','lamp'],['lamp','resistor']];
+const SERIES_RESISTANCES=[10,15,20,22,25,33,40,47,50,60,68,75,100,120,150,220,330,470];
+function lawData(){
+ const R=pick(SERIES_RESISTANCES);
+ const I=pick([0.005,0.01,0.02,0.025,0.04,0.05,0.06,0.075,0.08,0.1,0.12,0.15,0.2,0.25,0.3,0.4,0.5,1]);
+ const V=I*R;
+ return {R,I,V,P:V*I};
+}
+function lawName(k,component='R1'){
+ return {V:`voltage across ${component}`,I:`current through ${component}`,R:`resistance of ${component}`,
+ P:`power dissipated at ${component}`}[k];
+}
+function singleLawSvg(values,known,unknown,componentType){
+ const x=112,y=89,sourceY=165,right=612,compX=375,cy=y,rad=37;
+ const compHalf=componentType==='lamp'?30:RESISTOR_HALF;
+ const labelY=componentType==='lamp'?26:30;
+ const valueY=componentType==='lamp'?50:53;
+ let out=`${line(x,y,compX-compHalf,y)}${line(compX+compHalf,y,right,y)}${line(right,y,right,252)}${line(right,252,x,252)}`;
+ out+=`${line(x,y,x,sourceY-rad)}${line(x,sourceY+rad,x,252)}`;
+ out+=`<circle cx="${x}" cy="${sourceY}" r="${rad}" fill="#10263b" stroke="#b2cee7" stroke-width="3"/>`;
+ out+=`${txt(x,sourceY-6,'Vₛ','font-size="20"')}${txt(61,123,'+','font-size="19"')}${txt(61,217,'−','font-size="19"')}`;
+ if(known.includes('V'))out+=txt(x,sourceY+20,eng(values.V,'V'),'font-size="17"');
+ if(componentType==='resistor')out+=resistorBox(compX,cy,'');
+ else out+=`<circle cx="${compX}" cy="${cy}" r="30" fill="none" stroke="#d0e4f9" stroke-width="4"/><path d="M${compX-16} ${cy-16} l32 32 M${compX+16} ${cy-16} l-32 32" fill="none" stroke="#d0e4f9" stroke-width="4"/>`;
+ out+=`${txt(compX,labelY,componentType==='lamp'?'R1 (lamp)':'R1 (resistor)','font-size="17"')}`;
+ if(known.includes('R'))out+=txt(compX,valueY,eng(values.R,'Ω'),'font-size="17"');
+ if(known.includes('I'))out+=txt(296,207,`I = ${eng(values.I,'A')}`,'font-size="17"');
+ if(known.includes('P'))out+=txt(516,219,`P1 = ${eng(values.P,'W')}`,'font-size="17"');
+ return svg(out,'0 0 700 300','One-component series circuit; two given quantities and one unknown');
+}
+function lawStep(family,asked,d){
+ const {V,I,R,P}=d;
+ // All intermediate steps are calculated using unrounded values. Only the
+ // displayed representation is shortened to a readable number of digits.
+ const intermediate=x=>Number(x.toPrecision(10)).toString();
+ const expressions={
+  vir:{
+   V:`V = I × R = ${eng(I,'A')} × ${eng(R,'Ω')}`,
+   I:`I = V / R = ${eng(V,'V')} / ${eng(R,'Ω')}`,
+   R:`R = V / I = ${eng(V,'V')} / ${eng(I,'A')}`},
+  piv:{
+   P:`P = V × I = ${eng(V,'V')} × ${eng(I,'A')}`,
+   I:`I = P / V = ${eng(P,'W')} / ${eng(V,'V')}`,
+   V:`V = P / I = ${eng(P,'W')} / ${eng(I,'A')}`},
+  pi2r:{
+   P:`P = I² × R = (${eng(I,'A')})² × ${eng(R,'Ω')}`,
+   R:`P = I²R, so R = P / I² = ${eng(P,'W')} / (${eng(I,'A')})²`,
+   I:`P = I²R, so I² = P / R = ${intermediate(P)} / ${intermediate(R)} = ${intermediate(P/R)}.<br>2. <strong>Take the square root:</strong> I = √(P/R) = √(${intermediate(P/R)})`},
+  v2pr:{
+   P:`P = V² / R = (${eng(V,'V')})² / ${eng(R,'Ω')}`,
+   R:`P = V²/R, so R = V² / P = (${eng(V,'V')})² / ${eng(P,'W')}`,
+   V:`P = V²/R, so V² = P × R = ${intermediate(P)} × ${intermediate(R)} = ${intermediate(P*R)}.<br>2. <strong>Take the square root:</strong> V = √(P×R) = √(${intermediate(P*R)})`}
+ };
+ const isSqrt=(family==='pi2r'&&asked==='I')||(family==='v2pr'&&asked==='V');
+ return `The two given quantities determine the requested value.<br>1. <strong>Rearrange:</strong> ${expressions[family][asked]}.<br>${isSqrt?'3':'2'}. <strong>Final answer:</strong> ${eng(d[asked],LAW_UNITS[asked])}.`;
+}
+function triangleLawQuestion(family,caseNumber){
+ const [givenA,givenB,asked]=LAW_FAMILIES[family][caseNumber];
+ const data=lawData(),kind=pick(SINGLE_TYPES),visible=[givenA,givenB];
+ const what=lawName(asked,kind==='lamp'?'R1 (the lamp)':'R1 (the resistor)');
+ const statement=`The circuit provides two known quantities. Calculate <strong>${what}</strong>.`;
+ return qBase('multiLaw',`Electrical laws — ${what}`,statement,
+  singleLawSvg(data,visible,asked,kind),numAns(data[asked],LAW_UNITS[asked]),lawStep(family,asked,data));
+}
+// Each diagram uses a series loop with R1 on top and R2 on the return branch.
+// Both can independently be a resistor or a lamp. Current is identical in both.
+function multiLawPairSvg(R1,R2,Vs,types,opts={}){
+ const x=110,top=85,bottom=253,sy=167,srad=37,firstX=335,secondX=494,right=612;
+ const component=(idx,type,cx,cy)=>{
+  if(type==='resistor')return resistorBox(cx,cy,'');
+  return `<circle cx="${cx}" cy="${cy}" r="30" fill="none" stroke="#d0e4f9" stroke-width="4"/>`+
+   `<path d="M${cx-16} ${cy-16} l32 32 M${cx+16} ${cy-16} l-32 32" fill="none" stroke="#d0e4f9" stroke-width="3.6"/>`;
+ };
+ const half=(type)=>type==='lamp'?30:RESISTOR_HALF;
+ const a=half(types[0]),b=half(types[1]);
+ let out=`${line(x,top,firstX-a,top)}${component(1,types[0],firstX,top)}${line(firstX+a,top,right,top)}${line(right,top,right,bottom)}`;
+ out+=`${line(right,bottom,secondX+b,bottom)}${component(2,types[1],secondX,bottom)}${line(secondX-b,bottom,x,bottom)}`;
+ out+=`${line(x,top,x,sy-srad)}${line(x,sy+srad,x,bottom)}`;
+ out+=`<circle cx="${x}" cy="${sy}" r="${srad}" fill="#10263b" stroke="#d0e4f9" stroke-width="3"/>`;
+ out+=txt(x,sy-6,'Vₛ','font-size="19"');
+ if(opts.showSource!==false)out+=txt(x,sy+19,eng(Vs,'V'),'font-size="17"');
+ out+=txt(x-49,125,'+','font-size="19"')+txt(x-49,215,'−','font-size="19"');
+ const rLabel=(idx,val,type)=>{const base=`R${idx}${type==='lamp'?' (lamp)':''}`;const hidden=opts['hideR'+idx];return hidden==='nameOnly'?base:`${base} = ${val===null?'?':eng(val,'Ω')}`;};
+ out+=txt(firstX,41,rLabel(1,opts.hideR1?null:R1,types[0]),'font-size="16"');
+ out+=txt(secondX,308,rLabel(2,opts.hideR2?null:R2,types[1]),'font-size="16"');
+ if(opts.showCurrent)out+=txt(287,213,`Iₜ = ${eng(opts.showCurrent,'A')}`,'font-size="16"');
+ if(opts.showPowerTotal)out+=txt(298,184,`Pₜ = ${eng(opts.showPowerTotal,'W')}`,'font-size="16"');
+ if(opts.showTargetVoltage){
+   const idx=opts.target;
+   out+=txt(420,165,`V_R${idx} = ${eng(opts.showTargetVoltage,'V')}`,'font-size="16"');
+ }
+ if(opts.showTargetPower){
+   out+=txt(420,165,`Power at R${opts.target} = ${eng(opts.showTargetPower,'W')}`,'font-size="16"');
+ }
+ return svg(out,'0 0 700 345','Series circuit with one or two lamp or resistor loads and a DC source');
+}
+function seriesLawData(){
+ const types=pick(PAIR_TYPES),R1=pick(SERIES_RESISTANCES),R2=pick(SERIES_RESISTANCES),Vs=pick([3,5,6,9,10,12,15,18,20,24,30,36,48]);
+ const Rt=R1+R2,It=Vs/Rt;
+ const target=pick([1,2]),Rtarget=target===1?R1:R2;
+ return {types,R1,R2,Vs,Rt,It,target,Rtarget,Ptarget:It*It*Rtarget,Vtarget:It*Rtarget};
+}
+function seriesTargetLabel(target,types){return `R${target}${types[target-1]==='lamp'?' (the lamp)':''}`;}
+function multiLawSeriesPowerQuestion(){
+ const d=seriesLawData(),at=seriesTargetLabel(d.target,d.types);
+ const question=`Find the <strong>power dissipated at ${at}</strong> in the series circuit.`;
+ const solution=`1. <strong>Total resistance:</strong> Rₜ = R1 + R2 = ${eng(d.R1,'Ω')} + ${eng(d.R2,'Ω')} = <strong>${eng(d.Rt,'Ω')}</strong>.<br>`+
+  `2. <strong>Series current:</strong> Iₜ = Vₛ / Rₜ = ${eng(d.Vs,'V')} / ${eng(d.Rt,'Ω')} = <strong>${eng(d.It,'A')}</strong>.<br>`+
+  `3. <strong>Power at ${at}:</strong> P = Iₜ² × R${d.target} = (${d.Vs} / ${d.Rt})² × ${d.Rtarget} = <strong>${eng(d.Ptarget,'W')}</strong>.<br>`+
+  `The intermediate current was not rounded when computing power.`;
+ return qBase('multiLaw',`Multi-step series circuit — power at R${d.target}`,
+  question,multiLawPairSvg(d.R1,d.R2,d.Vs,d.types),numAns(d.Ptarget,'W'),solution);
+}
+function multiLawSeriesVoltageQuestion(){
+ const d=seriesLawData(),at=seriesTargetLabel(d.target,d.types);
+ const solution=`1. Rₜ = R1 + R2 = ${eng(d.R1,'Ω')} + ${eng(d.R2,'Ω')} = ${eng(d.Rt,'Ω')}.<br>`+
+  `2. Iₜ = Vₛ / Rₜ = ${eng(d.Vs,'V')} / ${eng(d.Rt,'Ω')} = ${eng(d.It,'A')}.<br>`+
+  `3. Voltage across ${at}: V = Iₜ × R${d.target} = (${d.Vs} / ${d.Rt}) × ${d.Rtarget} = <strong>${eng(d.Vtarget,'V')}</strong>.`;
+ return qBase('multiLaw',`Multi-step series circuit — voltage across R${d.target}`,
+  `Find the <strong>voltage across ${at}</strong> in the series circuit.`,
+  multiLawPairSvg(d.R1,d.R2,d.Vs,d.types),numAns(d.Vtarget,'V'),solution);
+}
+function multiLawSeriesSourcePowerQuestion(){
+ const d=seriesLawData(),P=d.Vs*d.It;
+ return qBase('multiLaw','Multi-step series circuit — source power',
+  'Calculate the <strong>total power delivered by the voltage source</strong> in the series circuit.',
+  multiLawPairSvg(d.R1,d.R2,d.Vs,d.types),numAns(P,'W'),
+  `1. Rₜ = R1 + R2 = ${eng(d.R1,'Ω')} + ${eng(d.R2,'Ω')} = ${eng(d.Rt,'Ω')}.<br>`+
+  `2. Iₜ = Vₛ / Rₜ = ${eng(d.Vs,'V')} / ${eng(d.Rt,'Ω')} = ${eng(d.It,'A')}.<br>`+
+  `3. Pₜ = Vₛ × Iₜ = ${d.Vs} × (${d.Vs} / ${d.Rt}) = <strong>${eng(P,'W')}</strong>.`);
+}
+function multiLawSeriesMissingResistanceQuestion(){
+ const d=seriesLawData(),at=seriesTargetLabel(d.target,d.types),Rother=d.target===1?d.R2:d.R1;
+ const visual=multiLawPairSvg(d.R1,d.R2,d.Vs,d.types,{hideR1:d.target===1,hideR2:d.target===2,showCurrent:d.It});
+ return qBase('multiLaw',`Multi-step series circuit — resistance of R${d.target}`,
+  `Find the <strong>resistance of ${at}</strong> in the series circuit.`,visual,numAns(d.Rtarget,'Ω'),
+  `1. Find the total resistance using source voltage and current: Rₜ = Vₛ / Iₜ = ${eng(d.Vs,'V')} / ${eng(d.It,'A')} = ${eng(d.Rt,'Ω')}.<br>`+
+  `2. Subtract the known series resistance: R${d.target} = Rₜ − ${eng(Rother,'Ω')} = <strong>${eng(d.Rtarget,'Ω')}</strong>.`);
+}
+function multiLawSeriesPowerGivenVIQuestion(){
+ const d=seriesLawData(),at=seriesTargetLabel(d.target,d.types);
+ const visual=multiLawPairSvg(d.R1,d.R2,d.Vs,d.types,{hideR1:'nameOnly',hideR2:'nameOnly',showSource:false,showCurrent:d.It,showTargetVoltage:d.Vtarget,target:d.target});
+ return qBase('multiLaw',`Series circuit — power dissipated at R${d.target}`,
+  `The circuit provides two known quantities. Calculate <strong>power dissipated at ${at}</strong>.`,visual,
+  numAns(d.Ptarget,'W'),`1. The current is identical through both series elements, so I = ${eng(d.It,'A')}.<br>`+
+  `2. Power at ${at}: P = V × I = ${eng(d.Vtarget,'V')} × ${eng(d.It,'A')} = <strong>${eng(d.Ptarget,'W')}</strong>.`);
+}
+function multiLawSeriesSourceVoltageQuestion(){
+ const d=seriesLawData(),at=seriesTargetLabel(d.target,d.types);
+ const visual=multiLawPairSvg(d.R1,d.R2,d.Vs,d.types,{showSource:false,showTargetPower:d.Ptarget,target:d.target});
+ const value=Math.sqrt(d.Ptarget/d.Rtarget);
+ return qBase('multiLaw','Multi-step series circuit — source voltage',
+  `The power dissipated at ${at} is shown. Calculate the <strong>source voltage</strong>.`,visual,
+  numAns(d.Vs,'V'),`1. Current through ${at}: Iₜ = √(P / R${d.target}) = √(${eng(d.Ptarget,'W')} / ${eng(d.Rtarget,'Ω')}) = ${eng(value,'A')}.<br>`+
+  `2. Total resistance: Rₜ = R1 + R2 = ${eng(d.Rt,'Ω')}.<br>`+
+  `3. Source voltage: Vₛ = Iₜ × Rₜ = <strong>${eng(d.Vs,'V')}</strong>.`);
+}
+
 const TEMPLATES={
  bands:[bandToValue,valueToBand],
  resistance:[seriesResistance,()=>parallelResistance('same'),()=>parallelResistance('two'),()=>parallelResistance('mixed')],
- kirchhoff:[kclQuestion,kvlQuestion],ohm:[()=>ohmQuestion('V'),()=>ohmQuestion('I'),()=>ohmQuestion('R')],
+ kirchhoff:[kclQuestion,kvlQuestion,()=>batteryQuantityQuestion('parallel')],ohm:[()=>ohmQuestion('V'),()=>ohmQuestion('I'),()=>ohmQuestion('R'),()=>batteryQuantityQuestion('current'),()=>batteryQuantityQuestion('voltage')],
  metric:[()=>metricQuestion('eng'),()=>metricQuestion('sci'),()=>metricQuestion('name')],
  concepts:[conceptQuestion],
  symbols:[...Object.keys(SYMBOLS).filter(k=>k!=='potentiometer').map(k=>()=>symbolQuestion(k)),...([0,90,180,270].map(deg=>()=>symbolQuestion('potentiometer',deg))),diodeQuestion,()=>ledQuestion('flat'),()=>ledQuestion('lead')],
  formula:[()=>formulaQuestion('same'),()=>formulaQuestion('two'),()=>formulaQuestion('mixed')],
- batteries:[batteryAidingQuestion,()=>batteryQuantityQuestion('current'),()=>batteryQuantityQuestion('voltage'),()=>batteryQuantityQuestion('parallel')],
- power:[()=>powerQuestion('P'),()=>powerQuestion('divider')]
+ batteries:[batteryAidingQuestion],
+ power:[()=>powerQuestion('P'),()=>powerQuestion('divider'),lampPowerQuestion,lampCurrentQuestion],
+ multiLaw:[
+  ...Object.keys(LAW_FAMILIES).flatMap(family=>[0,1,2].map(index=>()=>triangleLawQuestion(family,index))),
+  multiLawSeriesPowerQuestion,multiLawSeriesPowerQuestion,multiLawSeriesPowerQuestion,multiLawSeriesPowerQuestion,
+  multiLawSeriesVoltageQuestion,multiLawSeriesVoltageQuestion,
+  multiLawSeriesPowerGivenVIQuestion,multiLawSeriesPowerGivenVIQuestion,
+  multiLawSeriesSourcePowerQuestion,multiLawSeriesMissingResistanceQuestion,multiLawSeriesSourceVoltageQuestion]
 };
 const STORAGE_KEY='ece101_quiz_v4_stats'; // Preserve students' existing scores.
 const UNITS_MODE_KEY='ece101_quiz_units_mode';
