@@ -17,7 +17,7 @@ An interactive, single-page electrical engineering practice quiz for **ECE-101 T
 - **ANSI-style diagrams:** U.S.-style zigzag resistors, source and meter symbols, and properly separated schematic wires.
 - **Keyboard controls:** Use **A–D** to select a multiple-choice option, **Enter** to check the answer, and **Enter** again to advance.
 - **Responsive interface:** Designed for desktop browsers and mobile screens.
-- Link to conversation that generated the app: https://chatgpt.com/share/6ac99c7f-8d68-83ea-8922-e50d36c6190c
+- Link to conversation that generated the app: https://chatgpt.com/share/6acea209-9980-83ea-9c95-b33f32c22268
 
 ## Topics covered
 
