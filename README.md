@@ -4,7 +4,7 @@
 
 **[Launch the live quiz](https://realityexpander.github.io/ECE-101-Electronics-Quiz-App-for-Test-1-Resistors-Ohms-Law-KCL-KVL-/)** 
 
-An interactive, single-page electrical engineering practice quiz for **ECE-101 Test 1** at **Midlands Technical College**. It combines randomized calculations, circuit diagrams, component-symbol identification, and conceptual questions. The app is built with HTML, CSS, and vanilla JavaScript; no framework, account, or build process is required.
+An interactive, single-page electrical engineering practice quiz for **ECE-101 Midtern Test** at **Midlands Technical College**. It combines randomized calculations, circuit diagrams, component-symbol identification, and conceptual questions. The app is built with HTML, CSS, and vanilla JavaScript; no framework, account, or build process is required.
 
 ## Features
 
